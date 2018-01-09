@@ -7,6 +7,6 @@ import com.jfinal.config.Routes;
  */
 public class RouterTools {
     public void loadController(Routes routes, String basePackage) {
-        //扫描包路径
+        //使用包路径扫描
     }
 }
