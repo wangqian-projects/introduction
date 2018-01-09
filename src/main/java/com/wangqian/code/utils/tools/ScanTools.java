@@ -37,7 +37,7 @@ public class ScanTools {
             //如果是class文件
             if (item.isFile() && fileName.contains(".class")) {
                 classList.add(Class.forName(basePackage + "." + fileName.replace(".class", "")));
-                return;
+                continue;
             }
             //如果是文件夹继续向下扫描
             if (item.isDirectory()) {
