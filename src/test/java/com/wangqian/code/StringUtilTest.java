@@ -1,8 +1,6 @@
-package com.wangqian.code.util.tools;
+package com.wangqian.code;
 
 
-import com.wangqian.code.util.tools.util.tools.StringUtil;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class StringUtilTest {

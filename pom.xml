@@ -35,7 +35,7 @@
     <!-- 集中定义依赖版本号 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jfinal.version>2.2</jfinal.version>
+        <jfinal.version>3.3</jfinal.version>
         <junit.version>4.8.1</junit.version>
     </properties>
 
