@@ -49,7 +49,7 @@ public class ConfigExact {
         db_00.put("userName", "root");
         db_00.put("password", "123456");
         db_00.put("minPoolSize", "100");
-        db_00.put("maxPoolSize", "mysql");
+        db_00.put("maxPoolSize", "150");
         db_00.put("idleConnectionTestPeriod", "60");
         dbs.add(db_00);
     }
@@ -62,9 +62,9 @@ public class ConfigExact {
         db_01.put("userName", "root");
         db_01.put("password", "123456");
         db_01.put("minPoolSize", "100");
-        db_01.put("maxPoolSize", "mysql");
+        db_01.put("maxPoolSize", "150");
         db_01.put("idleConnectionTestPeriod", "60");
-        dbs.add(db_01);
+//        dbs.add(db_01);
     }
 
 

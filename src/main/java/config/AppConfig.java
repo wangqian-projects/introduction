@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class AppConfig extends JFinalConfig {
 
-    private Map<String, String> extendsConfig = null;
+    private Map<String, String> extendsConfig;
 
     /**
      * 常量配置
@@ -46,6 +46,7 @@ public class AppConfig extends JFinalConfig {
      *
      * @param plugins 插件
      */
+    @Override
     public void configPlugin(Plugins plugins) {
         //数据库插件
         C3p0Plugin cp;

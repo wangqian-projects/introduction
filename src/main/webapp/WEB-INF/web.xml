@@ -6,10 +6,6 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <!-- Servlet Filters ================================================ -->
-    <welcome-file-list>
-        <welcome-file>html/index.html</welcome-file>
-    </welcome-file-list>
-
     <filter>
         <filter-name>jfinal</filter-name>
         <filter-class>com.jfinal.core.JFinalFilter</filter-class>
