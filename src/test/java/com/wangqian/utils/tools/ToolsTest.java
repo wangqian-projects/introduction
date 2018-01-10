@@ -1,5 +1,6 @@
-package com.wangqian.code.utils.tools;
+package com.wangqian.utils.tools;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -17,6 +18,11 @@ public class ToolsTest {
         for (Class<?> clas : classList) {
             System.out.println("****************" + clas.getName());
         }
+    }
+
+    @Test
+    public void StringUtilTest(){
+        Assert.assertEquals(StringUtil.isStrEmpty(""),false);
     }
 
 }

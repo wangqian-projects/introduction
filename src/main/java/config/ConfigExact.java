@@ -32,6 +32,15 @@ public class ConfigExact {
      */
     private static Map<String, String> db_01 = new HashMap<String, String>();
 
+    /**
+     * 路由包名集
+     */
+    private static List<String> routesPackage = new ArrayList<>();
+
+    static {
+        routesPackage.add("com.wangqian.controller");
+    }
+
     static {
         db_00.put("name", "51ykb");
         db_00.put("type", "mysql");
@@ -69,6 +78,10 @@ public class ConfigExact {
 
     public static List<Map<String, String>> getDbs() {
         return dbs;
+    }
+
+    public static List<String> getRoutesPackage() {
+        return routesPackage;
     }
 
 }

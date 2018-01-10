@@ -1,4 +1,4 @@
-package com.wangqian.code.utils.tools;
+package com.wangqian.utils.tools;
 
 import java.io.File;
 import java.net.URL;
