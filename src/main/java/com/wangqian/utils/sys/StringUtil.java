@@ -1,4 +1,4 @@
-package com.wangqian.utils.tools;
+package com.wangqian.utils.sys;
 
 public class StringUtil {
 
