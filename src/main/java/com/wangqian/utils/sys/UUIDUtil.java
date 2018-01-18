@@ -119,7 +119,7 @@ public class UUIDUtil {
             case 12:
                 return get12UUID();
             case 16:
-                return get12UUID();
+                return get16UUID();
             case 20:
                 return get20UUID();
             case 24:

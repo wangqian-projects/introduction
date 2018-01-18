@@ -12,7 +12,7 @@ public class SysUtilTest {
     /**
      * UUID测试
      */
-    @Test
+//    @Test
     public void UUIDUtilTest() {
 //        UUID randomUUID = UUIDUtil.getRandomUUID();
 //        System.out.println("这是随机生成的uuid: " +randomUUID.toString());
