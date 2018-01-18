@@ -10,52 +10,52 @@ public class SnowflakeIdWorker {
      * 开始时间戳 (2018-1-18)
      * 起始的时间戳，可以修改为服务第一次启动的时间
      */
-    private static final long twepoch = 1516260290130L;
+    private static final long TWEPOCH = 1516260290130L;
 
     /**
      * 机器ID所占的位数
      */
-    private static final long workerIdBits = 5L;
+    private static final long WORKERID_BITS = 5L;
 
     /**
      * 数据中心ID所占的位数
      */
-    private static final long datacenterIdBits = 5L;
+    private static final long DATACENTERID_BITS = 5L;
 
     /**
      * 支持的最大机器ID 此算法可以很快的计算出几位二进制数所能表示的最大十进制数
      */
-    private static final long maxWorkerID = ~(-1L << workerIdBits);
+    private static final long MAX_WORKERID = ~(-1L << WORKERID_BITS);
 
     /**
      * 支持最大的数据中心ID
      */
-    private static final long maxDatacenterId = ~(-1L << datacenterIdBits);
+    private static final long MAX_DATACENTERID = ~(-1L << DATACENTERID_BITS);
 
     /**
      * 序列在ID中占的位数
      */
-    private static final long sequenceBits = 12L;
+    private static final long SEQUENCE_BITS = 12L;
 
     /**
-     * 机器ID向左移12位
+     * 机器ID左移12位
      */
-    private static final long workerIdShift = sequenceBits;
+    private static final long WORKERID_SHIFT = SEQUENCE_BITS;
 
     /**
-     * 数据中心ID向左移(12 + 5)位
+     * 数据中心ID左移(12 + 5)位
      */
-    private static final long datacenterIdShift = sequenceBits + workerIdBits;
+    private static final long DATACENTERID_SHIFT = SEQUENCE_BITS + WORKERID_BITS;
 
     /**
-     * 时间戳向左移(12 + 5 + 5)位
+     * 时间戳左移(12 + 5 + 5)位
      */
-    private static final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
+    private static final long TIMESTAMP_SHIFT = SEQUENCE_BITS + WORKERID_BITS + DATACENTERID_BITS;
 
     /**
      * 生成序列的掩码(4095)
      */
-    private static final long sequenceMask = ~(-1L << sequenceBits);
+    private static final long SEQUENCE_MASK = ~(-1L << SEQUENCE_BITS);
 
     /**
      * 工作机器(0-31)
@@ -80,17 +80,18 @@ public class SnowflakeIdWorker {
 
     /**
      * 建议通过单利模式获取
-     * 分布式部署服务时，数据节点标识和机器标识作为联合键必须唯一
-     * @param workerId 机器ID
+     * 分布式部署服务时，数据中心标识和机器工作标识作为联合键必须唯一
+     *
+     * @param workerId     机器ID
      * @param datacenterId 数据中心ID
      */
     public SnowflakeIdWorker(long workerId, long datacenterId) {
-        if (workerId > maxWorkerID || workerId < 0) {
-            throw new IllegalArgumentException(String.format("workerId can't be greater than %d or less than 0", maxWorkerID));
+        if (workerId > MAX_WORKERID || workerId < 0) {
+            throw new IllegalArgumentException(String.format("workerId can't be greater than %d or less than 0", MAX_WORKERID));
         }
 
-        if (datacenterId > maxDatacenterId || datacenterId < 0) {
-            throw new IllegalArgumentException(String.format("datacenterId can't be greater than %d or less than 0", maxDatacenterId));
+        if (datacenterId > MAX_DATACENTERID || datacenterId < 0) {
+            throw new IllegalArgumentException(String.format("datacenterId can't be greater than %d or less than 0", MAX_DATACENTERID));
         }
         this.workerId = workerId;
         this.datacenterId = datacenterId;
@@ -112,7 +113,7 @@ public class SnowflakeIdWorker {
 
         //如果当前时间和上次获取ID生成的时间戳一致, 则进行毫秒内序列.
         if (lastTimestamp == timestamp) {
-            sequence = (sequence + 1) & sequenceMask;
+            sequence = (sequence + 1) & SEQUENCE_MASK;
 
             //毫秒内序列溢出
             if (sequence == 0) {
@@ -124,9 +125,9 @@ public class SnowflakeIdWorker {
 
         lastTimestamp = timestamp;
 
-        return ((timestamp - twepoch) << timestampLeftShift)
-                | (datacenterId << datacenterIdShift)
-                | (workerId << workerIdShift)
+        return ((timestamp - TWEPOCH) << TIMESTAMP_SHIFT)
+                | (datacenterId << DATACENTERID_SHIFT)
+                | (workerId << WORKERID_SHIFT)
                 | sequence;
 
     }

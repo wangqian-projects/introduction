@@ -37,6 +37,13 @@ public class ConfigExact {
      */
     private static List<String> routesPackage = new ArrayList<>();
 
+    /**
+     * 数据中心标识(DATACENTER_ID)和机器工作标识(WORKER_ID), 不许超过31
+     * 数据全局ID服务参数
+     */
+    private static final long WORKER_ID = 12;
+    private static final long DATACENTER_ID = 13;
+
     static {
         routesPackage.add("com.wangqian.controller");
     }
@@ -84,4 +91,11 @@ public class ConfigExact {
         return routesPackage;
     }
 
+    public static long getWorkerId() {
+        return WORKER_ID;
+    }
+
+    public static long getDatacenterId() {
+        return DATACENTER_ID;
+    }
 }

@@ -65,6 +65,11 @@ public class AppConfig extends JFinalConfig {
         }
     }
 
+    /**
+     * 注册系统拦截器
+     *
+     * @param interceptors 拦截器
+     */
     public void configInterceptor(Interceptors interceptors) {
 
     }
@@ -72,4 +77,22 @@ public class AppConfig extends JFinalConfig {
     public void configHandler(Handlers handlers) {
 
     }
+
+    /**
+     * jfinal启动调用
+     */
+    @Override
+    public void afterJFinalStart() {
+        super.afterJFinalStart();
+
+    }
+
+    /**
+     * jfinal关闭调用
+     */
+    @Override
+    public void beforeJFinalStop() {
+        super.beforeJFinalStop();
+    }
+
 }
