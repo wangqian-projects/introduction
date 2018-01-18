@@ -6,8 +6,6 @@ package com.wangqian.utils.db;
  */
 public class SnowflakeIdWorker {
 
-    // ==================================Fields===================================
-
     /**
      * 开始时间戳 (2018-1-18)
      * 起始的时间戳，可以修改为服务第一次启动的时间
@@ -17,47 +15,47 @@ public class SnowflakeIdWorker {
     /**
      * 机器ID所占的位数
      */
-    private final long workerIdBits = 5L;
+    private static final long workerIdBits = 5L;
 
     /**
      * 数据中心ID所占的位数
      */
-    private final long datacenterIdBits = 5L;
+    private static final long datacenterIdBits = 5L;
 
     /**
      * 支持的最大机器ID 此算法可以很快的计算出几位二进制数所能表示的最大十进制数
      */
-    private final long maxWorkerID = ~(-1L << workerIdBits);
+    private static final long maxWorkerID = ~(-1L << workerIdBits);
 
     /**
      * 支持最大的数据中心ID
      */
-    private final long maxDatacenterId = ~(-1L << datacenterIdBits);
+    private static final long maxDatacenterId = ~(-1L << datacenterIdBits);
 
     /**
      * 序列在ID中占的位数
      */
-    private final long sequenceBits = 12L;
+    private static final long sequenceBits = 12L;
 
     /**
      * 机器ID向左移12位
      */
-    private final long workerIdShift = sequenceBits;
+    private static final long workerIdShift = sequenceBits;
 
     /**
      * 数据中心ID向左移(12 + 5)位
      */
-    private final long datacenterIdShift = sequenceBits + workerIdBits;
+    private static final long datacenterIdShift = sequenceBits + workerIdBits;
 
     /**
      * 时间戳向左移(12 + 5 + 5)位
      */
-    private final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
+    private static final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
 
     /**
      * 生成序列的掩码(4095)
      */
-    private final long sequenceMask = ~(-1L << sequenceBits);
+    private static final long sequenceMask = ~(-1L << sequenceBits);
 
     /**
      * 工作机器(0-31)
@@ -79,7 +77,6 @@ public class SnowflakeIdWorker {
      */
     private long lastTimestamp = -1L;
 
-    // ==================================Constructors===================================
 
     /**
      * 建议通过单利模式获取
@@ -99,7 +96,6 @@ public class SnowflakeIdWorker {
         this.datacenterId = datacenterId;
     }
 
-    // ==================================Methods===================================
 
     /**
      * 获取下一个ID
