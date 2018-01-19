@@ -1,4 +1,4 @@
-package com.wangqian.utils.db;
+package com.wangqian.utils.dac;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class DBTest {
 
-    @Test
+//    @Test
     public void IdWorkerTest() {
         SnowflakeIdWorker idWorker = new SnowflakeIdWorker(12,13);
         Set<Long> set = new HashSet<Long>();

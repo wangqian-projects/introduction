@@ -1,4 +1,4 @@
-package com.wangqian.utils.db;
+package com.wangqian.utils.dac;
 
 /**
  * twitter的snowflake算法
