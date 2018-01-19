@@ -4,7 +4,7 @@ import com.wangqian.dac.enums.SingleInstanceGenerator;
 
 /**
  * <p>ClassName: SnowflakeIdProvider</p>
- * <p>Description: 雪花算法ID</p>
+ * <p>Description: 自增ID提供者</p>
  *
  * @author wangqian
  * @date 2018-01-19 16:29

@@ -11,13 +11,13 @@ import config.ConfigExact;
  * @date 2018-01-19 17:39
  */
 public enum SingleInstanceGenerator {
-    SNOWFLAKE_ID_WORKER(0, "自增ID");
+    SNOWFLAKE_ID_WORKER(0, "雪花自增ID");
 
     private int id;
     private String text;
     private SnowflakeIdWorker snowflake;
 
-    private SingleInstanceGenerator(int id, String text) {
+    SingleInstanceGenerator(int id, String text) {
         this.id = id;
         this.text = text;
         snowflake = new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId());

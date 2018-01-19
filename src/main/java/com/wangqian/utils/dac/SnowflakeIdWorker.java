@@ -1,8 +1,12 @@
 package com.wangqian.utils.dac;
 
 /**
- * twitter的snowflake算法
+ * <p>ClassName: SnowflakeIdWorker</p>
+ * <p>Description: twitter的snowflake算法
  * 分布式系统中，全局唯一ID的场景，生产自增ID。
+ * </p>
+ *
+ * @author twitter
  */
 public class SnowflakeIdWorker {
 
