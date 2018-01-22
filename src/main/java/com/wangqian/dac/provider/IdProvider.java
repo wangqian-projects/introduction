@@ -1,6 +1,8 @@
 package com.wangqian.dac.provider;
 
 import com.wangqian.dac.enums.SingleInstanceGenerator;
+import com.wangqian.utils.dac.SnowflakeIdWorker;
+import config.ConfigExact;
 
 /**
  * <p>ClassName: SnowflakeIdProvider</p>
@@ -11,6 +13,7 @@ import com.wangqian.dac.enums.SingleInstanceGenerator;
  */
 public class IdProvider {
 
+    private final static SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId());
 
     /**
      * 获取下一个ID
@@ -18,7 +21,9 @@ public class IdProvider {
      * @return id
      */
     public static long nextId() {
-        return SingleInstanceGenerator.SNOWFLAKE_ID_WORKER.getSnowflakeIdWorker().nextId();
+        return ((SnowflakeIdWorker)SingleInstanceGenerator.SNOWFLAKE_ID_WORKER_A.getSingleInstance()).nextId();
+//        return ((SnowflakeIdWorker)SingleInstanceGenerator.SNOWFLAKE_ID_WORKER_B.getSingleInstance()).nextId();
+//        return snowflakeIdWorker.nextId();
     }
 
 
