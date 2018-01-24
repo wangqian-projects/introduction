@@ -5,6 +5,16 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
+/**
+ * <p>ClassName: ImageProcessUtil</p>
+ * <p>Description: 图像处理工具
+ * 调整图片大小, 支持等比例压缩, 支持GIF
+ * 采用平滑处理, 图片处理后清晰度高
+ * </p>
+ *
+ * @author wangqian
+ * @date 2018-01-23 17:55
+ */
 public class ImageProcessUtil {
 
     private enum ImageType {
@@ -50,15 +60,14 @@ public class ImageProcessUtil {
      * 图片处理
      * <方法描述>
      *
-     * @param input
-     * @param output
-     * @param width
-     * @param height
-     * @param proportion
-     * @return
+     * @param input      输入流
+     * @param output     输出流
+     * @param width      目标宽度
+     * @param height     目标长度
+     * @param proportion 是否等比例
+     * @return 图像处理结果
      */
     public static boolean ImageProcess(InputStream input, OutputStream output, String formatName, int width, int height, boolean proportion) {
-
         return ImageProcess(input, output, formatName, width, height, 0, 0, proportion);
     }
 
@@ -66,14 +75,14 @@ public class ImageProcessUtil {
      * 图片处理
      * <方法描述>
      *
-     * @param input
-     * @param output
+     * @param input      输入流
+     * @param output     输出流
      * @param width      目标宽度
      * @param height     目标长度
      * @param x          起始坐标x
      * @param y          起始坐标y
      * @param proportion 是否等比例
-     * @return
+     * @return 图像处理结果
      */
     public static boolean ImageProcess(InputStream input, OutputStream output, String formatName, int width, int height, int x, int y, boolean proportion) {
         if (input == null) {
@@ -87,13 +96,11 @@ public class ImageProcessUtil {
             if (ImageType.GIF.title.equalsIgnoreCase(formatName)) {
                 GifDecoder decoder = new GifDecoder();
                 AnimatedGifEncoder ag = new AnimatedGifEncoder();
-
                 if (decoder.read(input) == 0) {
                     //获取gif每一帧
-                    BufferedImage frame = null;
-                    int delay = 0; //每一帧延迟时间
+                    BufferedImage frame;
                     ag.start(output);
-
+                    int delay; //每一帧延迟时间
                     for (int i = 0; i < decoder.getFrameCount(); i++) {
                         frame = decoder.getFrame(i);
                         frame = ImageCompress(frame, width, height, x, y, proportion);
@@ -104,22 +111,18 @@ public class ImageProcessUtil {
                         ag.setDelay(delay);
                     }
                     ag.closeStream = false;
-                    if (ag.finish()) {
-                        return true;
-                    }
-
+                    return ag.finish();
                 }
                 //gif读取失败
                 return false;
-            } else {
-
-                //图片压缩
-                BufferedImage image = ImageCompress(ImageIO.read(input), width, height, x, y, proportion);
-                //图片裁剪
-                image = cutImage(image, width, height);
-
-                return ImageIO.write(image, formatName, output);
             }
+            //图片压缩
+            BufferedImage image = ImageCompress(ImageIO.read(input), width, height, x, y, proportion);
+            //图片裁剪
+            image = cutImage(image, width, height);
+
+            return ImageIO.write(image, formatName, output);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -136,11 +139,11 @@ public class ImageProcessUtil {
      * @param x          起始坐标x
      * @param y          起始坐标y
      * @param proportion 是否等比例
-     * @return
+     * @return BufferedImage
      */
-    public static BufferedImage ImageCompress(BufferedImage image, int width, int height, int x, int y, boolean proportion) {
+    private static BufferedImage ImageCompress(BufferedImage image, int width, int height, int x, int y, boolean proportion) {
         if (image == null) {
-            return image;
+            return null;
         }
         int imageWidth = image.getWidth(null);
         int imageHeight = image.getHeight(null);
@@ -176,12 +179,12 @@ public class ImageProcessUtil {
      * 图片裁剪
      * <方法描述>
      *
-     * @param image
-     * @param width
-     * @param height
-     * @return
+     * @param image  BufferedImage
+     * @param width  裁剪宽度
+     * @param height 裁剪长度
+     * @return BufferedImage
      */
-    public static BufferedImage cutImage(BufferedImage image, int width, int height) {
+    private static BufferedImage cutImage(BufferedImage image, int width, int height) {
         int imgWidth = image.getWidth();
         int imgHeight = image.getHeight();
         if (width == 0 || height == 0) {
