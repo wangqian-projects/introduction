@@ -3,7 +3,11 @@ package com.wangqian.utils.sys;
 import java.util.UUID;
 
 /**
- * UUID生产工具
+ * <p>ClassName: UUIDUtil</p>
+ * <p>Description: UUID生产工具</p>
+ * 
+ * @author wangqian
+ * @date 2018-01-24 11:48
  */
 public class UUIDUtil {
 

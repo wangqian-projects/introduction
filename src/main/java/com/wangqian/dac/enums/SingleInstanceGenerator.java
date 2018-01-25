@@ -16,7 +16,7 @@ import java.lang.reflect.Parameter;
 public enum SingleInstanceGenerator {
     SNOWFLAKE_ID_WORKER_A(0, SnowflakeIdWorker.class, ConfigExact.getWorkerId(), ConfigExact.getDatacenterId()),
 
-    SNOWFLAKE_ID_WORKER_B(0, new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId()));
+    SNOWFLAKE_ID_WORKER_B(1, new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId()));
 
 
     private int id;
@@ -82,4 +82,7 @@ public enum SingleInstanceGenerator {
         return obj;
     }
 
+    public int getId() {
+        return id;
+    }
 }

@@ -11,7 +11,7 @@ import config.ConfigExact;
  * @author wangqian
  * @date 2018-01-19 16:29
  */
-public class IdProvider {
+public class IdProvider implements Provider{
 
     private final static SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId());
 
