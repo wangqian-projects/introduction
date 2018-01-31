@@ -9,7 +9,7 @@ package com.wangqian.dac.exception;
  */
 public class DacDataListenerException extends DacRuntimeException {
 
-    private static final long serialVersionUID = -1;
+    private static final long serialVersionUID = 1L;
 
     public DacDataListenerException(String errMsg, int i) {
         super(errMsg);

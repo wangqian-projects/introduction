@@ -9,6 +9,8 @@ package com.wangqian.dac.exception;
  */
 public class DacDataConvertException extends DacRuntimeException{
 
+    private static final long serialVersionUID = 1L;
+
     public DacDataConvertException(String errMsg) {
         super(errMsg);
     }

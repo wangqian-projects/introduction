@@ -66,7 +66,6 @@ public enum SingleInstanceGenerator {
 
             //选择的构造器
             if (useNoParam && parameterCount == 0 || score == parameterCount) {
-                System.out.println("");
                 try {
                     obj = c.newInstance(ConstructorParams);
                     return;

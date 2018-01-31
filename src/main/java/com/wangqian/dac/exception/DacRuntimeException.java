@@ -11,7 +11,7 @@ import java.util.HashMap;
  */
 public abstract class DacRuntimeException extends RuntimeException {
 
-    private static final long serialVersionUID = -1;
+    private static final long serialVersionUID = 1L;
 
     public DacRuntimeException(String errMsg) {
         super(errMsg);

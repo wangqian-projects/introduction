@@ -9,7 +9,7 @@ package com.wangqian.dac.exception;
  */
 public class DacDeleteException extends DacRuntimeException{
 
-    private static final long serialVersionUID = -1;
+    private static final long serialVersionUID = 1L;
 
     public DacDeleteException(String errMsg) {
         super(errMsg);
