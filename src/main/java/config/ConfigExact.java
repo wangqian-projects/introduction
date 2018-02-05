@@ -52,7 +52,7 @@ public class ConfigExact {
         db_00.put("name", "51ykb");
         db_00.put("type", "mysql");
         db_00.put("className", "com.mysql.jdbc.Driver");
-        db_00.put("jdbcUrl", "jdbc:mysql://localhost:3306/51ykb?useUnicode=true&characterEncoding=utf-8");
+        db_00.put("jdbcUrl", "jdbc:mysql://localhost:3306/jfinalg?useUnicode=true&characterEncoding=utf-8");
         db_00.put("userName", "root");
         db_00.put("password", "123456");
         db_00.put("minPoolSize", "100");
@@ -65,7 +65,7 @@ public class ConfigExact {
         db_01.put("name", "51ykb01");
         db_01.put("type", "mysql");
         db_01.put("className", "com.mysql.jdbc.Driver");
-        db_01.put("jdbcUrl", "jdbc:mysql://localhost:3306/51ykb?useUnicode=true&characterEncoding=utf-8");
+        db_01.put("jdbcUrl", "jdbc:mysql://localhost:3306/jfinalg?useUnicode=true&characterEncoding=utf-8");
         db_01.put("userName", "root");
         db_01.put("password", "123456");
         db_01.put("minPoolSize", "100");
