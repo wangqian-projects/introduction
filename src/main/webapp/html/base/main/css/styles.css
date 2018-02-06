@@ -1,0 +1,446 @@
+/*
+ * Base purecss provides basic styling, but we overide some of them here.
+ */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #526066;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+}
+
+h1 { font-size: 1.5em }
+h2 { font-size: 1em }
+h3 { font-size: 0.8em }
+
+p {
+    line-height: 1.6em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+
+code {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/*
+ * Layout styles
+ * * center content
+ * * add padding between and around text boxes
+ */
+
+#content {
+    margin: 0 auto;
+    padding: 0em 1em 2em 1em;
+    max-width: 980px;
+    overflow: auto;
+    padding-bottom: 5em; /* uses for footer */
+}
+
+.l-box { padding: 0.5em; }
+
+/* header settings */
+
+#header {
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+
+.logo {
+    padding:1em;
+}
+
+/* menu settings */
+
+body {
+    /* fix for android */
+    -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+    from { padding: 0; }
+    to { padding: 0; }
+}
+
+#menu-toggle-cb {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+#menu-toggle {
+    cursor: pointer;
+    user-select: none;
+    width: 38px;
+    height: 36px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#menu-toggle .bar {
+    background-color: #777;
+    display: block;
+    width: 24px;
+    height: 4px;
+    border-radius: 100px;
+    position: absolute;
+    top: 16px;
+    right: 7px;
+}
+
+#menu-toggle .bar:first-child {
+    top: 8px;
+}
+
+#menu-toggle .bar:last-child {
+    top: 24px;
+}
+
+/* Make the hamburger menu do visual magic */
+
+#menu-toggle-cb:checked ~ #menu-toggle .bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#menu-toggle-cb:checked ~ #menu-toggle .bar:last-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#menu-toggle-cb:checked ~ #menu-toggle .bar:nth-child(odd) {
+    top: 16px;
+}
+
+#menu-toggle-cb:checked ~ #menu-toggle .bar:nth-child(even) {
+    display: none;
+}
+
+.menu-local {
+    position: absolute;
+    bottom: 0;
+}
+
+.menu-external {
+    text-align: right;
+    font-style: italic;
+}
+
+.box-relative {
+    position: relative;
+}
+
+/*
+ * The banner with background image.
+ * we use relative positioning to be able to position the banner content properly
+ * background taken from:
+ * https://unsplash.com/@roylandnye
+ *
+ */
+
+.banner {
+    background: transparent url('../imgs/banner1.jpg') 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/banner1.jpg', sizingMethod='scale');
+    height: 200px;
+    width: 100%;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    margin-top: -80px;
+    width: 100%;
+}
+
+.banner h1 {
+    margin-bottom: 0;
+    font-size: 2em;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 1px black;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.banner h3 {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 1px black;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.banner-head {
+    margin-bottom: 0;
+    font-size: 2em;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 1px black;
+}
+
+.banner-head-small {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0 1px 1px black;
+}
+
+/*
+ * News section
+ */
+
+.news-archive {
+    width: 100%;
+}
+
+.index a.cgit {
+    color: black;
+}
+
+.index a.atom {
+    color: #f26522;
+}
+
+/*
+ * Download Section (tables)
+ */
+
+.download {
+    border: 1px solid #ddd;
+    margin: 0 0.5em 2em;
+    text-align: left;
+}
+
+.download h2 {
+    color: #fff;
+    margin: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.download ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.download li {
+    padding: 0.8em;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.download p {
+    padding: 0.8em;
+}
+
+.download .green-button {
+    padding: 0.5em;
+    color: white;
+    font-weight: normal;
+    font-size: 120%;
+    background: #018E4A;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.download a.checksums {
+    font-size: 70%;
+    color: #696969;
+}
+
+.download .checksums li {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 0px;
+}
+
+.download .pure-table {
+    width: 100%;
+    border: 0;
+    background: #f7f7f7;
+    color: #696969;
+}
+
+.download .pure-table-horizontal td {
+    border:0;
+    border-top:1px solid #e7e7e7;
+    padding: 1em 0.5em 1em 0.5em;
+}
+
+/*
+ * Home page styling
+ */
+
+.home-list li {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.home-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.read-more { margin-top: 1em; }
+
+/* increase top margin */
+
+.community h2,
+.about h2 {
+    margin-top: 2em;
+}
+
+/*
+ * Footer styling
+ */
+
+footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8em;
+}
+
+footer a { color: #ddd; }
+
+/*
+ * posts and community lists
+ */
+
+.posts li,
+.community li {
+    margin: 0.5em;
+}
+
+/*
+ * Color set taken from:
+ * http://www.colourlovers.com/home/trends/interior-looks/7760/Dive_Into_Color
+ */
+
+.flavor-color-0 h2 { background: #36384D; }
+.flavor-color-1 h2 { background: #CBB063; }
+.flavor-color-2 h2 { background: #AA8B4A; }
+.flavor-color-3 h2 { background: #3C2C1F; }
+.flavor-color-4 h2 { background: #B63731; }
+.flavor-color-5 h2 { background: #E68804; }
+.flavor-color-6 h2 { background: #376160; }
+
+/*
+ * MEDIA queries
+ */
+
+/* phones */
+
+@media (min-width: 31em) {
+    .banner { height: 300px; }
+    .banner h1 { font-size: 3em; }
+}
+
+/* tablets */
+
+@media(min-width: 48em) {
+    .banner { height: 400px; }
+}
+
+/* responsive menu */
+
+@media (max-width: 63.999em) {
+    .menu-external {
+        text-align: left;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .menu-wrapper nav.pure-menu ul,
+    .menu-wrapper nav.pure-menu ul li {
+        display: block;
+    }
+
+    #menu-toggle-cb ~ .menu-wrapper {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    #menu-toggle-cb:checked ~ .menu-wrapper {
+        max-height: 25em;
+    }
+
+    #menu-toggle-cb ~ .menu-wrapper,
+    #menu-toggle-cb:checked ~ .menu-wrapper {
+        -webkit-transition: max-height 0.8s;
+        -moz-transition: max-height 0.8s;
+        -ms-transition: max-height 0.8s;
+        -o-transition: max-height 0.8s;
+        transition: max-height 0.8s;
+    }
+
+    .logo img {
+        max-width: 16em;
+    }
+
+    .menu-local {
+        position: static;
+        bottom: auto;
+    }
+
+    .menu-external {
+        font-style: normal;
+    }
+
+}
