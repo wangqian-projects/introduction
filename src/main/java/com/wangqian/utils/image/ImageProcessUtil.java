@@ -34,8 +34,8 @@ public class ImageProcessUtil {
      * <方法描述>
      */
     public static void main(String[] args) {
-        File file1 = new File("G:\\c.jpg");
-        File file2 = new File("G:\\c1test.jpg");
+        File file1 = new File("G:\\1.jpg");
+        File file2 = new File("G:\\banner3.jpg");
 
         try {
             if (!file2.exists()) {
@@ -45,7 +45,7 @@ public class ImageProcessUtil {
             String formatName = file1.getName().substring(file1.getName().lastIndexOf(".") + 1);
             InputStream input = new FileInputStream(file1);
             OutputStream output = new FileOutputStream(file2);
-            ImageProcess(input, output, formatName, 400, 400, true);
+            ImageProcess(input, output, formatName, 1280, 720, true);
             input.close();
             output.flush();
             output.close();
