@@ -9,9 +9,9 @@
     <packaging>war</packaging>
 
     <!-- 项目的名称, Maven产生的文档用 -->
-    <name>JFinal-gorgeous</name>
-    <groupId>com.wangqian</groupId>
-    <artifactId>JFinal-gorgeous</artifactId>
+    <name>QianWalteWang</name>
+    <groupId>com.walte.qian</groupId>
+    <artifactId>QianWalteWang</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- 集中定义依赖版本号 -->
