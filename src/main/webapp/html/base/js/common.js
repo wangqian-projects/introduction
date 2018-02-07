@@ -8,7 +8,7 @@
  * @version 1.0
  */
 $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 pure-u-lg-4-24"> '+
-                          '<div class="logo"><a href="/"><img src="/html/base/main/imgs/qwaltewang-logo.svg" class="pure-img" alt="" /></a></div> '+
+                          '<div class="logo"><a href="/"><img src="/html/base/imgs/qwaltewang-logo.svg" class="pure-img" alt="" /></a></div> '+
                           '</div> '+
                           '<input type="checkbox" id="menu-toggle-cb"> '+
                           '<label id="menu-toggle" for="menu-toggle-cb" onclick><s class="bar"></s><s class="bar"></s><s class="bar"></s></label> '+
@@ -34,5 +34,5 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           ' </div> '+
                       ' </header>');
 
-$('.footerWrap').html('<footer>© Copyright 2018 Q. Walte Wang all rights reserved | <a href="/html/base/main/page/privacy-policy.html">Privacy Policy</a></footer>');
+$('.footerWrap').html('<footer>© Copyright 2018 Q. Walte Wang all rights reserved | <a href="/html/main/page/privacy-policy.html">Privacy Policy</a></footer>');
 
