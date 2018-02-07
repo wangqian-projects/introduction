@@ -1,2 +1,2 @@
-# JFinal-gorgeous
-Implementation can be accelerated using code-level patterns, templates, and model-transformation methods following a rapid application development paradigm.
+# QianWalteWang
+我亦飘零久，十年来，深恩负尽，死生师友。宿昔齐名非忝窃，只看杜陵消瘦，曾不减，夜郎孱愁。薄命长辞知己别，问人生、到此凄凉否？千万恨，为君剖。兄生辛未吾丁丑，共此时，冰雪催折，早衰蒲柳。诗赋从今须少作，留取心魄相守，但愿得，河清人寿。归日急翻行戌稿，把空名、料理传身后，言不尽，观顿首。
