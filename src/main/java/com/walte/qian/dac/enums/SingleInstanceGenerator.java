@@ -1,6 +1,6 @@
 package com.walte.qian.dac.enums;
 
-import com.walte.qian.utils.dac.SnowflakeIdWorker;
+import com.walte.qian.dac.util.SnowflakeIdWorker;
 import config.ConfigExact;
 
 import java.lang.reflect.Constructor;

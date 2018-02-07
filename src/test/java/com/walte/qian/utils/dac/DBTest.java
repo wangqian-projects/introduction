@@ -1,6 +1,6 @@
 package com.walte.qian.utils.dac;
 
-import org.junit.Test;
+import com.walte.qian.dac.util.SnowflakeIdWorker;
 
 import java.util.HashSet;
 import java.util.Set;

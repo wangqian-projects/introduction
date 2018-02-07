@@ -1,7 +1,7 @@
 package com.walte.qian.dac.provider;
 
 import com.walte.qian.dac.enums.SingleInstanceGenerator;
-import com.walte.qian.utils.dac.SnowflakeIdWorker;
+import com.walte.qian.dac.util.SnowflakeIdWorker;
 import config.ConfigExact;
 
 /**

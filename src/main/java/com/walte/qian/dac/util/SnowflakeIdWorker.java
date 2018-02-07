@@ -1,4 +1,4 @@
-package com.walte.qian.utils.dac;
+package com.walte.qian.dac.util;
 
 /**
  * <p>ClassName: SnowflakeIdWorker</p>
