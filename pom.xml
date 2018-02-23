@@ -30,12 +30,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <!--jfinal依赖-->
         <dependency>
             <groupId>com.jfinal</groupId>
             <artifactId>jfinal</artifactId>
             <version>${jfinal.version}</version>
         </dependency>
+
         <!--mysql连接-->
         <dependency>
             <groupId>mysql</groupId>
@@ -56,6 +58,28 @@
             <scope>provided</scope>
         </dependency>
 
+
+        <!-- jackson -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.4</version>
+        </dependency>
+
         <!-- JBoss Rules 规则引擎 -->
         <!-- https://mvnrepository.com/artifact/org.drools/drools-compiler -->
         <dependency>
@@ -63,7 +87,6 @@
             <artifactId>drools-compiler</artifactId>
             <version>7.5.0.Final</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.drools/drools-core -->
         <dependency>
             <groupId>org.drools</groupId>
