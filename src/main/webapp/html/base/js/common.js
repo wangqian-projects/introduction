@@ -25,31 +25,13 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           '     <nav class="pure-menu pure-menu-horizontal menu-external"> '+
                           '         <ul class="pure-menu-list"> '+
                           '             <li class="pure-menu-item"><a href="underConstruction.html" class="pure-menu-link">wiki</a></li> '+
-                          '             <li class="pure-menu-item"><a href="https://github.com/wangqiantra" class="pure-menu-link">github</a></li> '+
+                          '             <li class="pure-menu-item"><a href="https://github.com/wangqiantra/QianWalteWang" class="pure-menu-link"><i class="fa fa-github"></i> github</a></li> '+
                           '             <li class="pure-menu-item"><a href="underConstruction.html" class="pure-menu-link">bugs</a></li> '+
                           '             <li class="pure-menu-item"><a href="underConstruction.html" class="pure-menu-link">forums</a></li> '+
-                          '             <li class="pure-menu-item"><a href="underConstruction.html" class="pure-menu-link">packages</a></li> '+
+                          '             <li class="pure-menu-item"><a href="underConstruction.html" class="pure-menu-link"><i class="fa fa-camera-retro"></i></a></li> '+
                           '         </ul> '+
                           '     </nav> '+
                           ' </div> '+
                       ' </header>');
 
-$('.footerWrap').html('<footer>© Copyright 2018 Q. Walte Wang all rights reserved | <a href="/html/main/page/privacy-policy.html">Privacy Policy</a></footer>');
-
-function cfbb4bc38bea4699b4fc3924dd7a55ee(pass) {
-    var result1 = false;
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: "/db0357bad4284243abe0f4eb408eb361",
-        data: '{pass:"' + pass + '"}'
-    }).done(function(result) {
-        result1 = result;
-    });
-
-    if (result1) {
-        return;
-    }
-    window.location.href = "/html/main/page/privateLogin.html";
-}
-
+$('.footerWrap').html('<footer>© Copyright 2018 Q . Walte Wang all rights reserved | <a href="/html/main/page/privacy-policy.html">Privacy Policy</a></footer>');

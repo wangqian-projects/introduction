@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alpine Linux">
+    <title>UUID Online | Q . Walte Wang</title>
+
+    <link rel="stylesheet" href="../../base/css/pure-min.css" />
+    <link rel="stylesheet" href="../../base/css/grids-responsive-min.css" />
+    <link rel="stylesheet" href="../../base/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+        .index a.share-uuid {
+            color: black;
+        }
+        .howMany-text {
+            size: 3px;
+        }
+        .placeholder-margin-right-26 {
+            margin-right: 26px;
+        }
+
+        .placeholder-margin-right-10 {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="headerWrap"></div>
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Online UUID Generator</h1>
+            <h3><span id="version"></span></h3>
+            <h2><span id="uuid"></span></h2>
+            <h3>Refresh to generate another.</h3>
+        </div>
+    </div>
+    <div id="content" class="index">
+        <div align="center">
+            <a class="pure-button" id="refreshUuid" href="#refreshUuid" onclick="return false">Refresh</a>
+        </div>
+        <div class="pure-g">
+
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="l-box">
+                    <h2>
+                        <a href="#version1" onclick="return false" class="share-uuid">
+                            <i class="fa fa-share"></i>
+                        </a>
+                        Version 1 UUID
+                    </h2>
+                    <a href="#version1" onclick="return false" id="version1">Generate a version 1 UUID.</a>
+                    <h2>Bulk Version 1 UUID Generation</h2>
+                    <ul class="public-list">
+                        <li>
+                            <span class="placeholder-margin-right-26">How Many? </span>
+                            <input placeholder="1-3000" id="version1_many" class="howMany-text" type="text"/>
+                        </li>
+                        <li>
+                            <input id="hyphen1" type="checkbox" name="checkbox" value="noHyphen">
+                            <label class="placeholder-margin-right-10" for="hyphen1">No Hyphen</label>
+                            <a class="pure-button" id="version1_gen" href="#version1_gen" onclick="return false">Generate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="l-box">
+                    <h2>
+                        <a href="#version4" class="share-uuid" onclick="return false">
+                            <i class="fa fa-share"></i>
+                        </a>
+                        Version 4 UUID
+                    </h2>
+                    <a href="#version4" onclick="return false" id="version4">Generate a version 4 UUID.</a>
+                    <h2>Bulk Version 4 UUID Generation</h2>
+                    <ul class="public-list">
+                        <li>
+                            <span class="placeholder-margin-right-26">How Many? </span>
+                            <input placeholder="1-3000" id="version4_many" class="howMany-text" type="text"/>
+                        </li>
+                        <li>
+                            <input id="hyphen4" type="checkbox" name="checkbox" value="noHyphen">
+                            <label class="placeholder-margin-right-10" for="hyphen4">No Hyphen</label>
+                            <a class="pure-button" id="version4_gen" href="#version1_gen" onclick="return false">Generate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end content -->
+    <div class="footerWrap"></div>
+</div> <!-- end wrapper -->
+<script src="../../base/js/jquery.min.js"></script>
+<script src="../../base/js/common.js"></script>
+<script src="../js/intervalBackImg.js"></script>
+
+<script>
+    (function($){
+        $(function(){
+            onlineUuid();
+
+            var version; //全局版本号
+
+            function onlineUuid() {
+                $("#uuid").text("37aa3f3b6-ce1e-49bd-abd0-48ac04478716");
+            }
+
+            $("[href='#version1']").click(function () {
+                version = 1;
+                chooseVersion();
+            });
+
+            $("[href='#version4']").click(function () {
+                version = 4;
+                chooseVersion();
+            });
+
+            $("[href='#refreshUuid']").click(function () {
+                if(!version) {
+                    version = 4;
+                }
+                chooseVersion();
+            });
+            
+            function chooseVersion() {
+                $("#version").text("Your Version "+ version +" UUID:");
+            }
+
+        });
+    })(jQuery);
+
+</script>
+</body>
+</html>
