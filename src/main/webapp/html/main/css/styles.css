@@ -474,3 +474,33 @@ footer a { color: #ddd; }
     }
 
 }
+
+
+/*
+ * placeholder
+ */
+.placeholder-margin-left-10 {
+    margin-left: 10px;
+}
+
+.placeholder-margin-left-15 {
+    margin-left: 15px;
+}
+
+.placeholder-margin-left-26 {
+    margin-left: 26px;
+}
+
+.placeholder-margin-right-10 {
+    margin-right: 10px;
+}
+
+.placeholder-margin-right-15 {
+    margin-right: 15px;
+}
+
+.placeholder-margin-right-26 {
+    margin-right: 26px;
+}
+
+

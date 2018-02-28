@@ -4,6 +4,7 @@ import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.template.Engine;
+import com.walte.qian.utils.sys.StringUtil;
 import com.walte.qian.utils.tools.RouterTools;
 
 import java.util.Map;
@@ -24,6 +25,7 @@ public class AppConfig extends JFinalConfig {
      */
     public void configConstant(Constants constants) {
         extendsConfig = ConfigExact.getExtendsConfig();
+        constants.setDevMode(ConfigExact.isDevMode());
     }
 
     /**

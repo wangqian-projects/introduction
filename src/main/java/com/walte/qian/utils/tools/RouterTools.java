@@ -18,7 +18,7 @@ public class RouterTools {
             for (Class<?> clzz : scan.getClassList()) {
                 con = clzz.getDeclaredAnnotation(UrlMapper.class);
                 if (con != null) {
-                    routes.add(con.val(), (Class<? extends com.jfinal.core.Controller>) clzz);
+                    routes.add(con.value(), (Class<? extends com.jfinal.core.Controller>) clzz);
                 }
             }
         } catch (ClassNotFoundException e) {

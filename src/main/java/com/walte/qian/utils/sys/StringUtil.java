@@ -12,6 +12,10 @@ public class StringUtil {
         return str == null || str.length() == 0;
     }
 
+    public static boolean isNotEmpty(String str) {
+        return !isStrEmpty(str);
+    }
+
     /**
      * 字符串null转换
      * @param str String

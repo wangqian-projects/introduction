@@ -9,5 +9,5 @@ public @interface UrlMapper {
     /**
      * 值
      */
-    public String val();
+    public String value();
 }

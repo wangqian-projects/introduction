@@ -10,7 +10,12 @@ public class ConfigExact {
     /**
      * 拓展配置
      */
-    private static Map<String, String> extendsConfig = new HashMap<String, String>();
+    private static Map<String, String> extendsConfig = new HashMap<>();
+
+    /**
+     * 是否为开发模式
+     */
+    private static final boolean devMode = true;
 
     /**
      * 是否显示SQL
@@ -43,6 +48,10 @@ public class ConfigExact {
      */
     private static final long WORKER_ID = 0;
     private static final long DATACENTER_ID = 0;
+
+    static {
+        extendsConfig.put("baseViewPath","/html"); //设置全局基本路径
+    }
 
     static {
         routesPackage.add("com.walte.qian.controller");
@@ -97,5 +106,9 @@ public class ConfigExact {
 
     public static long getDatacenterId() {
         return DATACENTER_ID;
+    }
+
+    public static boolean isDevMode() {
+        return devMode;
     }
 }
