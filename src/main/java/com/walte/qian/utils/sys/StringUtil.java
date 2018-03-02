@@ -1,5 +1,8 @@
 package com.walte.qian.utils.sys;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringUtil {
 
     /**
@@ -33,5 +36,19 @@ public class StringUtil {
     public static String nvl(Object obj) {
         return obj == null ? "" : obj.toString();
     }
+
+    /**
+     * 提取字符串
+     * @param regx 正则
+     * @param str 要匹配的字符串
+     * @return String
+     * @throws Exception 异常
+     */
+    public static String loadStrByRegx(String regx, String str) throws Exception {
+        Pattern pattern = Pattern.compile(regx);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.find() ? str.substring(matcher.start(), matcher.end()) : "";
+    }
+
 
 }
