@@ -20,7 +20,7 @@ public class UUIDBizController extends Controller{
 
     public void uuidOnline() {
         setAttr("uuid",service.generateUuid("4"));
-        render("/html/main/page/uuidOnline.html");
+        render("/html/main/page/uuid-online.html");
     }
 
     public void generateUuid() {
