@@ -4,6 +4,7 @@ import com.walte.qian.utils.sys.UUIDUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * <p>ClassName: UUIDBizService</p>
@@ -15,6 +16,24 @@ import java.util.List;
 public class UUIDBizService {
 
     public String generateUuid(String version) {
+        return getVersionUuid(version);
+    }
+
+    public List<String> generateBulkUuid(String version, int howMany, String hyphen) {
+        List<String> uuidList = new ArrayList<>(howMany);
+        if ("0".equals(hyphen)) {
+            for (int i = 0; i < howMany; i++) {
+                uuidList.add(getVersionUuid(version));
+            }
+        } else {
+            for (int i = 0; i < howMany; i++) {
+                uuidList.add(getVersionUuid(version).replace("-",""));
+            }
+        }
+        return uuidList;
+    }
+
+    private String  getVersionUuid(String version){
         if("1".equals(version)) {
             return UUIDUtil.getRandomUUID().toString();
         } else if ("4".equals(version)) {
@@ -23,19 +42,4 @@ public class UUIDBizService {
         return "Generating UUID failed";
     }
 
-    public List<String> generateBulkUuid(String version, int howMany, String hyphen) {
-
-        List<String> uuidList = new ArrayList<>(howMany);
-        if ("0".equals(hyphen)) {
-            for (int i = 0; i < howMany; i++) {
-                uuidList.add(UUIDUtil.getRandomUUID().toString());
-            }
-        } else {
-            for (int i = 0; i < howMany; i++) {
-                uuidList.add(UUIDUtil.getUUID());
-            }
-        }
-        return uuidList;
-    }
-    
 }

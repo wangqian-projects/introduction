@@ -134,6 +134,7 @@
 
             //global variables
             var version; //全局版本号
+            var bulkVersion;
             var uuidList;
 
             //-------------------------- functions -----------------------------
@@ -162,10 +163,12 @@
 
                 // bulk uuid generation
                 $("#bulk_version1").click(function () {
+                    bulkVersion = 1;
                     doBulkUuid(true);
                 });
 
                 $("#bulk_version4").click(function () {
+                    bulkVersion = 4;
                     doBulkUuid(false);
                 });
 
@@ -297,29 +300,12 @@
             
             function downloadBulkUuid() {
                 console.log(uuidList);
-
-                // $.ajax({
-                //     url: '/uuidBiz/downloadBulkUuid',
-                //     type: 'POST', //GET
-                //     async: true,    //或false,是否异步
-                //     data: {
-                //         version: version_, howmany: howmany, hyphen: hyphen
-                //     },
-                //     timeout: 5000,    //超时时间
-                //     dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                //     success: function (data) {
-                //         var uuid_ul = $("#uuid_ul");
-                //         uuid_ul.children().filter("li").remove();
-                //         for (var i = 0; i < data.length; i++) {
-                //             uuid_ul.append("<li>" + data[i] + "</li>");
-                //         }
-                //         uuidList = data;
-                //     }
-                // });
-            }
-            
-            function downloadFileBase() {
-                
+                var url = "/uuidBiz/downloadBulkUuid";
+                var params = {
+                    bulkVersion: bulkVersion,
+                    uuidList : JSON.stringify(uuidList)
+                };
+                httpPost(url, params);
             }
 
 

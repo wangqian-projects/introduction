@@ -40,3 +40,20 @@ $('.footerWrap').html('<footer>© Copyright 2018 Q . Walte Wang all rights reser
 $(".href-invalid").click(function () {
     return false;
 });
+
+
+function httpPost(url, params) {
+    var formTemp = document.createElement("form");
+    formTemp.action = url;
+    formTemp.method = "post";
+    formTemp.style.display = "none";
+    for (var x in params) {
+        var opt = document.createElement("textarea");
+        opt.name = x;
+        opt.value = params[x];
+        formTemp.appendChild(opt);
+    }
+    document.body.appendChild(formTemp);
+    formTemp.submit();
+    return formTemp;
+}
