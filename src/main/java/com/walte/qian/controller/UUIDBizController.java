@@ -18,11 +18,6 @@ public class UUIDBizController extends Controller{
 
     private UUIDBizService service = new UUIDBizService();
 
-    public void uuidOnline() {
-        setAttr("uuid",service.generateUuid("4"));
-        render("/html/main/page/uuid-online.html");
-    }
-
     public void generateUuid() {
         renderText(service.generateUuid(getPara("version")));
     }

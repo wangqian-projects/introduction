@@ -17,8 +17,8 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           '         <ul class="pure-menu-list"> '+
                           '             <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li> '+
                           '             <li class="pure-menu-item"><a href="/downloads" class="pure-menu-link">Downloads</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Blog</a></li> '+
                           '             <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/community" class="pure-menu-link">Community</a></li> '+
                           '             <li class="pure-menu-item"><a href="/sponsor" class="pure-menu-link">Sponsor</a></li> '+
                           '         </ul> '+
                           '     </nav> '+

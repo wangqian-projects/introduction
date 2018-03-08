@@ -6,28 +6,33 @@
     <meta name="description" content="Alpine Linux">
     <title>UUID Online | Q . Walte Wang</title>
 
-    <link rel="stylesheet" href="/html/base/css/pure-min.css" />
-    <link rel="stylesheet" href="/html/base/css/grids-responsive-min.css" />
-    <link rel="stylesheet" href="/html/base/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/html/main/css/styles.css" />
+    <link rel="stylesheet" href="/html/base/css/pure-min.css"/>
+    <link rel="stylesheet" href="/html/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet" href="/html/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/html/main/css/styles.css"/>
     <style>
         .index a.share-uuid {
             color: black;
         }
+
         .view {
             margin-top: 50px;
             display: none;
         }
+
         .view-uuid {
             margin-top: 25px;
             width: 490px;
         }
+
         .view-uuid-ul {
             width: 490px;
         }
+
         .view-uuid ul {
-            text-align:center;
+            text-align: center;
         }
+
         .view-uuid li {
             white-space: nowrap;
         }
@@ -106,7 +111,7 @@
                          <a class="pure-button href-invalid" id="copy" href="#copy">Copy</a>
                     </span>
                     <span class="placeholder-margin-left-26">
-                        <a class="pure-button href-invalid" id="download_uuid" href="#download_uuid">Download</a>
+                        <a class="pure-button href-invalid" id="downloadBulkUuid" href="#downloadBulkUuid">Download</a>
                     </span>
                 </div>
                 <div class="view-uuid">
@@ -123,12 +128,13 @@
 <script src="/html/main/js/intervalBackImg.js"></script>
 
 <script>
-    (function($){
-        $(function(){
+    (function ($) {
+        $(function () {
             Initialization();
 
             //global variables
             var version; //全局版本号
+            var uuidList;
 
             //-------------------------- functions -----------------------------
             //init
@@ -164,9 +170,9 @@
                 });
 
                 $(".input-many").click(function () {
-                    $(".input-many").val("").css("color", "#447e84");
+                    $(".input-many").val("").css("color", "#2c3134");
                 });
-                
+
                 $("#copy").click(function () {
                     var copy = document.getElementById("uuid_ul");
                     if (document.body.createTextRange) {
@@ -184,8 +190,12 @@
                     }
                     document.execCommand("Copy");
                 });
+
+                $("#downloadBulkUuid").click(function () {
+                    downloadBulkUuid();
+                });
             }
-            
+
             function doUuid() {
                 if (!version) {
                     version = 4;
@@ -193,10 +203,10 @@
                 chooseVersion();
                 generateUuid();
             }
-            
+
             function doBulkUuid(ver) {
                 var howmany;
-                var hyphen ;
+                var hyphen;
                 if (ver) {
                     var many1 = $("#version1_many");
                     howmany = many1.val();
@@ -217,20 +227,20 @@
             }
 
             function chooseVersion() {
-                $("#version").text("Your Version "+ version +" UUID:");
+                $("#version").text("Your Version " + version + " UUID:");
             }
-            
+
             function generateUuid() {
                 $.ajax({
-                    url:'/uuidBiz/generateUuid',
-                    type:'POST', //GET
-                    async:true,    //或false,是否异步
-                    data:{
+                    url: '/uuidBiz/generateUuid',
+                    type: 'POST', //GET
+                    async: true,    //或false,是否异步
+                    data: {
                         version: version
                     },
-                    timeout:5000,    //超时时间
-                    dataType:'text',    //返回的数据格式：json/xml/html/script/jsonp/text
-                    success:function(data){
+                    timeout: 5000,    //超时时间
+                    dataType: 'text',    //返回的数据格式：json/xml/html/script/jsonp/text
+                    success: function (data) {
                         $("#uuid").text(data);
                     }
                 });
@@ -263,31 +273,56 @@
                     $("#view").hide()
                 }
             }
-            
+
             function generateBulkUuid(version_, howmany, hyphen) {
                 $.ajax({
-                    url:'/uuidBiz/generateBulkUuid',
-                    type:'POST', //GET
-                    async:true,    //或false,是否异步
-                    data:{
+                    url: '/uuidBiz/generateBulkUuid',
+                    type: 'POST', //GET
+                    async: true,    //或false,是否异步
+                    data: {
                         version: version_, howmany: howmany, hyphen: hyphen
                     },
-                    timeout:5000,    //超时时间
-                    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                    success:function(data){
+                    timeout: 5000,    //超时时间
+                    dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                    success: function (data) {
                         var uuid_ul = $("#uuid_ul");
                         uuid_ul.children().filter("li").remove();
-                        for (var i=0; i< data.length; i++) {
-                            uuid_ul.append("<li>"+ data[i] +"</li>");
+                        for (var i = 0; i < data.length; i++) {
+                            uuid_ul.append("<li>" + data[i] + "</li>");
                         }
+                        uuidList = data;
                     }
                 });
             }
             
-            function dataToTxt(data) {
-                
+            function downloadBulkUuid() {
+                console.log(uuidList);
+
+                // $.ajax({
+                //     url: '/uuidBiz/downloadBulkUuid',
+                //     type: 'POST', //GET
+                //     async: true,    //或false,是否异步
+                //     data: {
+                //         version: version_, howmany: howmany, hyphen: hyphen
+                //     },
+                //     timeout: 5000,    //超时时间
+                //     dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                //     success: function (data) {
+                //         var uuid_ul = $("#uuid_ul");
+                //         uuid_ul.children().filter("li").remove();
+                //         for (var i = 0; i < data.length; i++) {
+                //             uuid_ul.append("<li>" + data[i] + "</li>");
+                //         }
+                //         uuidList = data;
+                //     }
+                // });
             }
             
+            function downloadFileBase() {
+                
+            }
+
+
         });
     })(jQuery);
 
