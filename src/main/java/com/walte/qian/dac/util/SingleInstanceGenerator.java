@@ -1,5 +1,6 @@
-package com.walte.qian.dac.enums;
+package com.walte.qian.dac.util;
 
+import com.walte.qian.dac.enums.BasicReferenceDataTypes;
 import com.walte.qian.dac.util.SnowflakeIdWorker;
 import config.ConfigExact;
 

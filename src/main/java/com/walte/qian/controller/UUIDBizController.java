@@ -1,19 +1,14 @@
 package com.walte.qian.controller;
 
 import com.jfinal.core.Controller;
-import com.jfinal.json.Json;
 import com.walte.qian.annotation.UrlMapper;
-import com.walte.qian.dac.provider.IdProvider;
-import com.walte.qian.dac.provider.UuidProvider;
 import com.walte.qian.service.UUIDBizService;
 import com.walte.qian.utils.sys.JSONUtil;
+import com.walte.qian.utils.sys.UUIDUtil;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -42,7 +37,7 @@ public class UUIDBizController extends Controller{
 
     public void downloadBulkUuid() {
         String bulkVersion = getPara("bulkVersion");
-        String fileName = bulkVersion+ "v_"+ UuidProvider.get8UUID()+".txt";
+        String fileName = bulkVersion+ "v_"+ UUIDUtil.get8UUID()+".txt";
         List uuidList = JSONUtil.fromJSON(getPara("uuidList"), List.class);
         HttpServletResponse res = getResponse();
         res.setContentType("text/html; charset=UTF-8");

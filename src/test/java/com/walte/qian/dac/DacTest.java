@@ -1,8 +1,8 @@
 package com.walte.qian.dac;
 
-import com.walte.qian.dac.provider.IdProvider;
+import com.walte.qian.dac.service.IdentSeedImpl;
+import com.walte.qian.dac.service.spi.IIdentSeedService;
 import org.junit.Test;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +14,8 @@ import java.util.Set;
  * @date 2018-01-19 17:45
  */
 public class DacTest {
+    IIdentSeedService seedService =  new IdentSeedImpl();
+
 
 //    @Test
     public void IdProviderTest() {
@@ -27,7 +29,7 @@ public class DacTest {
 
         long start = System.currentTimeMillis();
         for (int j = 0; j < 26*100000; j++) {
-            IdProvider.nextId();
+            seedService.nextSnowflakeId();
         }
         System.out.println(String.format("时间消耗为: %s",System.currentTimeMillis() - start));
         //测试结果: 获取260万ID需要638毫秒
