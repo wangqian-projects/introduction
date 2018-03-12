@@ -16,10 +16,10 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
     '     <nav class="pure-menu pure-menu-horizontal menu-local"> '+
     '         <ul class="pure-menu-list"> '+
     '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/static-home.html" class="pure-menu-link">Home</a></li> '+
-    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Downloads</a></li> '+
+    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Articles</a></li> '+
+    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Projects</a></li> '+
     '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">About</a></li> '+
-    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Community</a></li> '+
-    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Sponsors</a></li> '+
+    '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/friendly-404.html" class="pure-menu-link">Sponsor</a></li> '+
     '         </ul> '+
     '     </nav> '+
     '     <nav class="pure-menu pure-menu-horizontal menu-external"> '+
@@ -41,7 +41,7 @@ $(".href-invalid").click(function () {
     return false;
 });
 
-//执行动态切换北京
+//执行动态切换背景
 IntervalBackImg();
 
 //functions
@@ -52,7 +52,7 @@ function IntervalBackImg() {
 function RandomBackImg() {
     var imgArr = ["banner0.jpg", "banner1.jpg" ,"banner2.jpg", "banner3.jpg"];
     var index = RandomNum(0, imgArr.length);
-    $('.banner').css("background-image", "url(https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/imgs/"+imgArr[index]+")");
+    $('.interval-back-img').css("background-image", "url(https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/imgs/"+imgArr[index]+")");
 }
 
 function RandomNum(Min, Max) {

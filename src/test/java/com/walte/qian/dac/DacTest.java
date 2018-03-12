@@ -1,8 +1,8 @@
 package com.walte.qian.dac;
 
-import com.walte.qian.dac.service.IdentSeedImpl;
+import com.walte.qian.dac.service.IdentSeedServiceImpl;
 import com.walte.qian.dac.service.spi.IIdentSeedService;
-import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +14,7 @@ import java.util.Set;
  * @date 2018-01-19 17:45
  */
 public class DacTest {
-    IIdentSeedService seedService =  new IdentSeedImpl();
+    IIdentSeedService seedService =  new IdentSeedServiceImpl();
 
 
 //    @Test

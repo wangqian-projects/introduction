@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author wangqian
  * @date 2018-03-09 18:01
  */
-public class IdentSeedImpl implements IIdentSeedService{
+public class IdentSeedServiceImpl implements IIdentSeedService{
 
     private final static SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker(ConfigExact.getWorkerId(), ConfigExact.getDatacenterId());
 
