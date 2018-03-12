@@ -21,11 +21,13 @@ public class AppConfig extends JFinalConfig {
      * 数据库连接信息
      * 加载其他拓展信息
      *
-     * @param constants 常量
+     * @param me Constants
      */
-    public void configConstant(Constants constants) {
+    public void configConstant(Constants me) {
         extendsConfig = ConfigExact.getExtendsConfig();
-        constants.setDevMode(ConfigExact.isDevMode());
+        me.setDevMode(ConfigExact.isDevMode());
+        me.setError404View("/html/main/page/friendly/404.html");
+        me.setError500View("/html/main/page/friendly/505.html");
     }
 
     /**

@@ -27,14 +27,14 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           '             <li class="pure-menu-item"><a href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/walte-wiki.html" class="pure-menu-link">wiki</a></li> '+
                           '             <li class="pure-menu-item"><a href="https://github.com/wangqiantra/QianWalteWang" class="pure-menu-link"><i class="fa fa-github"></i> github</a></li> '+
                           '             <li class="pure-menu-item"><a href="mailto:wangqian_live@163.com" class="pure-menu-link"><meta itemprop="email" content="wangqian_live@163.com"/>mail</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/html/main/page/friendly-404.html" class="pure-menu-link">author</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/html/main/page/friendly-404.html" class="pure-menu-link"><i class="fa fa-user-circle"></i> sign in</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/html/main/page/friendly/000.html" class="pure-menu-link">author</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/html/main/page/friendly/000.html" class="pure-menu-link"><i class="fa fa-user-circle"></i> sign in</a></li> '+
                           '         </ul> '+
                           '     </nav> '+
                           ' </div> '+
                       ' </header>');
 
-$('.footerWrap').html('<footer>© Copyright 2018 Q . Walte Wang all rights reserved | <a href="/html/main/page/privacy-policy.html">Privacy Policy</a></footer>');
+$('.footerWrap').html('<footer>© Copyright 2018 Q . Walte Wang all rights reserved | <a href="/html/main/page/policy/privacy-policy.html">Privacy Policy</a></footer>');
 
 //使元素为class="href-Invalid"的href失效
 $(".href-invalid").click(function () {
