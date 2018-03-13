@@ -21,7 +21,6 @@
 <body>
 <div id="wrapper">
     <div class="headerWrap"></div>
-    <div id="random_Banner"></div>
     <div id="content">
         <h1>A Kind Reminder</h1>
         <p>There haven't a GitHub Pages static page.</p>
@@ -40,11 +39,10 @@
 <script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/js/three/aviator.js"></script>
 <script>
     (function ($) {
-        var rDiv = RandomNum(0, 2);
-        if (rDiv === 0) {
-            $("#random_Banner").html('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+        if (Math.random() > 0.5) {
+            $(".headerWrap").after('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
         } else {
-            $("#random_Banner").html('<div class="world banner" id="world"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+            $(".headerWrap").after('<div class="world banner" id="world"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
         }
     })(jQuery);
 
