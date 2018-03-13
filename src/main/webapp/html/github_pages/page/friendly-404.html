@@ -37,7 +37,7 @@
 <script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/js/common.js"></script>
 <script>
     (function ($) {
-        if (!Math.random() > 0.5) {
+        if (Date.now() % 2 > 0) {
             $(".headerWrap").after('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
             heavenlyBody();
         } else {
