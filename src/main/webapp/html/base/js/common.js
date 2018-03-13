@@ -16,10 +16,10 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           '     <nav class="pure-menu pure-menu-horizontal menu-local"> '+
                           '         <ul class="pure-menu-list"> '+
                           '             <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/article" class="pure-menu-link">Articles</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/project" class="pure-menu-link">Projects</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li> '+
-                          '             <li class="pure-menu-item"><a href="/sponsor" class="pure-menu-link">Sponsor</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/articles/" class="pure-menu-link">Articles</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/projects/" class="pure-menu-link">Projects</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/about/" class="pure-menu-link">About</a></li> '+
+                          '             <li class="pure-menu-item"><a href="/sponsor/" class="pure-menu-link">Sponsor</a></li> '+
                           '         </ul> '+
                           '     </nav> '+
                           '     <nav class="pure-menu pure-menu-horizontal menu-external"> '+

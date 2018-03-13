@@ -7,7 +7,7 @@ import com.walte.qian.annotation.UrlMapper;
 public class BaseController extends Controller {
 
     public void index () {
-        render ( "html/index.html" );
+        render ( "/html/main/page/index.html" );
     }
 
 }
