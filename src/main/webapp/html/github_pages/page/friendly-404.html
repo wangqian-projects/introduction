@@ -6,32 +6,49 @@
     <meta name="description" content="Q. Walte Wang">
     <title>404 | Q . Walte Wang</title>
 
-    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/pure-min.css" />
-    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/grids-responsive-min.css" />
-    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/styles.css" />
-    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/heavenly-body.css" />
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/pure-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/styles.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/three/heavenly-body.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/three/aviator.css"/>
 </head>
 <body>
 <div id="wrapper">
     <div class="headerWrap"></div>
-    <div class="heavenly-body banner" id="universe">
-        <div class="banner-content">
-            <h1>404</h1>
-            <h3>PAGE NOT FOUND</h3>
-        </div>
-    </div>
+    <div id="random_Banner"></div>
     <div id="content">
         <h1>A Kind Reminder</h1>
         <p>There haven't a GitHub Pages static page.</p>
-        <p>I have a great vision that one day this page will actually be finished and complete. Please share in this delusion.</p>
-        <a class="pure-button read-more" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/static-home.html">Return to Home</a>
+        <p>I have a great vision that one day this page will actually be finished and complete. Please share in this
+            delusion.</p>
+        <a class="pure-button read-more"
+           href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/static-home.html">Return
+            to Home</a>
     </div> <!-- end content -->
     <div class="footerWrap"></div>
 </div> <!-- end wrapper -->
 <script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/js/jquery.min.js"></script>
 <script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/js/three.min.js"></script>
 <script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/js/common.js"></script>
-<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/js/heavenly-body.js"></script>
+<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/js/three/heavenly-body.js"></script>
+<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/js/three/aviator.js"></script>
+<script>
+    (function ($) {
+        var rDiv = RandomNum(0, 2);
+        if (rDiv === 0) {
+            $("#random_Banner").html('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+        } else {
+            $("#random_Banner").html('<div class="world banner" id="world"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+        }
+    })(jQuery);
+
+</script>
+
 </body>
 </html>
