@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q. Walte Wang">
+    <title>whats lunch.html | Q . Walte Wang</title>
+
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/pure-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/styles.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/three/heavenly-body.css"/>
+    <link rel="stylesheet"
+          href="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/main/css/three/aviator.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div class="headerWrap"></div>
+    <div id="content">
+        <h1>A Kind Reminder</h1>
+        <p>Have a good lunch!</p>
+    </div> <!-- end content -->
+    <div class="footerWrap"></div>
+</div> <!-- end wrapper -->
+<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/js/jquery.min.js"></script>
+<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/base/js/three.min.js"></script>
+<script src="https://wangqiantra.github.io/QianWalteWang/src/main/webapp/html/github_pages/js/common.js"></script>
+<script>
+    (function ($) {
+        if (Date.now() % 2 > 0) {
+            $(".headerWrap").after('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1><span id="lunch"></span></h1><h3><time class="nowTime"></time></h3></div></div>');
+            heavenlyBody();
+        } else {
+            $(".headerWrap").after('<div class="world banner" id="world"><div class="banner-content"><h1><span id="lunch"></span></h1><h3><time class="nowTime"></time></h3></div></div>');
+            aviator();
+        }
+
+        var restaurant = ["腾讯希格玛", "骨汤菜饭", "快乐E族", "大排饭"];
+        var tmp = [];
+        var index;
+        var str;
+        for (var i=0; i< restaurant.length; i++) {
+            while (true) {
+                index = RandomNum(0, restaurant.length);
+                str = restaurant[index];
+                if (str != null){
+                    tmp[i] = restaurant[index];
+                    restaurant[index] = null;
+                    break;
+                }
+            }
+
+        }
+        $("#lunch").text(tmp[RandomNum(0, tmp.length)]);
+
+        $(".nowTime").text(formatDate(new Date(Date.now())));
+
+        function formatDate(now) {
+            var year = now.getFullYear();
+            var month = now.getMonth()+1;
+            var date = now.getDate();
+
+            var month_head = month < 10 ? "0" : "";
+            var date_head = date < 10 ? "0" : "";
+
+            return year+"-"+ month_head + month + "-" + date_head + date;
+        }
+
+    })(jQuery);
+
+</script>
+
+</body>
+</html>
