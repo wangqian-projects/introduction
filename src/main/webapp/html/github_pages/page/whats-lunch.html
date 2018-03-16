@@ -68,7 +68,32 @@
             var month_head = month < 10 ? "0" : "";
             var date_head = date < 10 ? "0" : "";
 
-            return year+"-"+ month_head + month + "-" + date_head + date;
+            var week = "星期";
+            switch (now.getDay()) {
+                case 0:
+                    week += "日";
+                    break;
+                case 1:
+                    week += "一";
+                    break;
+                case 2:
+                    week += "二";
+                    break;
+                case 3:
+                    week += "三";
+                    break;
+                case 4:
+                    week += "四";
+                    break;
+                case 5:
+                    week += "五";
+                    break;
+                case 6:
+                    week += "六";
+                    break;
+            }
+
+            return year+"-"+ month_head + month + "-" + date_head + date +"   " + week;
         }
 
     })(jQuery);
