@@ -57,7 +57,7 @@
             var m = today.getMonth() + 1;
             var d = today.getDate();
             var WeekOfMonth = getMonthWeek(y, m, d);
-            var dayOfWeek = 6 - (m * 7 - d); //日:0 一:1 六:6
+            var dayOfWeek = 6 - (WeekOfMonth * 7 - d); //日:0 一:1 六:6
 
             var key = "@" + WeekOfMonth + "week" + m + "month" + y + "year";
             var fuzzy = truncate(key.split(''), restaurant.length).split('');
