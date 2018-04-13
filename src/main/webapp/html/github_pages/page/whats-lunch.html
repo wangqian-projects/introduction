@@ -40,6 +40,14 @@
             aviator();
         }
 
+        var getMonthWeek = function (a, b, c) {
+            var date = new Date(a, parseInt(b) - 1, c),
+                w = date.getDay(),
+                d = date.getDate();
+            return Math.ceil((d + 6 - w) / 7);
+        };
+
+
         var restaurants = ["腾讯希格玛", "骨汤菜饭", "快乐E族", "大排饭", "山西面馆"];
         toLunch(restaurants);
 
@@ -118,13 +126,6 @@
 
 
         $(".nowTime").text(formatDate(new Date(Date.now())));
-
-        var getMonthWeek = function (a, b, c) {
-            var date = new Date(a, parseInt(b) - 1, c),
-                w = date.getDay(),
-                d = date.getDate();
-            return Math.ceil((d + 6 - w) / 7);
-        };
 
         function formatDate(now) {
             var year = now.getFullYear();
