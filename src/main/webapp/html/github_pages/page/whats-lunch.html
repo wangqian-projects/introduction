@@ -98,7 +98,7 @@
             }
 
             if (depth < 7 && dayOfWeek >= depth) {
-                dayOfWeek <<= (WeekOfMonth % 3);
+                dayOfWeek >>= (WeekOfMonth % 3);
             }
 
             $("#lunch").text(restaurant[precise[Math.abs(dayOfWeek)]]);
