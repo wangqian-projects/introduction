@@ -57,7 +57,7 @@
             var m = today.getMonth() + 1;
             var d = today.getDate();
             var WeekOfMonth = getMonthWeek(y, m, d);
-            var dayOfWeek = today.getDay() -1; //日:-1 一:0 六:5
+            var dayOfWeek = today.getDay() - 1; //日:-1 一:0 六:5
 
             var key = "@" + WeekOfMonth + "week" + m + "month" + y + "year";
             var fuzzy = truncate(key.split(''), restaurant.length).split('');
@@ -98,7 +98,7 @@
             }
 
             if (depth < 7 && dayOfWeek >= depth) {
-                dayOfWeek >>= (WeekOfMonth % 3);
+                dayOfWeek >>= (WeekOfMonth % (WeekOfMonth === 3 ? 2 : 3));
             }
 
             $("#lunch").text(restaurant[precise[Math.abs(dayOfWeek)]]);
