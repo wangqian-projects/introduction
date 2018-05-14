@@ -56,10 +56,11 @@
             var y = today.getFullYear();
             var m = today.getMonth() + 1;
             var d = today.getDate();
+            var hours = today.getHours() < 14 ? "A" : "P";
             var WeekOfMonth = getMonthWeek(y, m, d);
             var dayOfWeek = today.getDay() - 1; //日:-1 一:0 六:5
 
-            var key = "@" + WeekOfMonth + "week" + m + "month" + y + "year";
+            var key = hours + WeekOfMonth + "week" + m + "month" + y + "year";
             var fuzzy = truncate(key.split(''), restaurant.length).split('');
 
             var depth = fuzzy.length;
