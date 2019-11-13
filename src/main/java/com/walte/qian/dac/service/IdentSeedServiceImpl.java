@@ -38,4 +38,10 @@ public class IdentSeedServiceImpl implements IIdentSeedService{
     public long pickSerialNumber(String key) {
         return 0;
     }
+
+    public static void main(String[] args) {
+        IdentSeedServiceImpl id = new IdentSeedServiceImpl();
+        long l = id.nextSnowflakeId();
+        System.out.println(l);
+    }
 }
