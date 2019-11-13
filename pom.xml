@@ -3,19 +3,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <!-- 声明项目描述遵循哪一个pom模型版本. 模型本身的版本很少改变, 确保Maven引入新特性活其他模型变更后模型的稳定性 -->
     <modelVersion>4.0.0</modelVersion>
     <!-- 项目产生的构件类型, 例如jar、war、ear、pom. 插件可以创建他们自己的构件类型 -->
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <!-- 项目的名称, Maven产生的文档用 -->
-    <name>QianWalteWang</name>
-    <groupId>com.walte.qian</groupId>
-    <artifactId>QianWalteWang</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.wangqian.introduction</groupId>
+    <artifactId>wangqian-introduction-build</artifactId>
+    <version>${revision}</version>
+
+    <name>Wangqian Introduction Build</name>
+    <description>Wangqian Introduction Build</description>
 
     <!-- 集中定义依赖版本号 -->
     <properties>
+        <revision>2.0.0.BUILD-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jfinal.version>3.3</jfinal.version>
         <junit.version>4.8.1</junit.version>
