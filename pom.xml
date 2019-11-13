@@ -6,6 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- 项目产生的构件类型, 例如jar、war、ear、pom. 插件可以创建他们自己的构件类型 -->
     <packaging>pom</packaging>
+    <modules>
+        <module>wangqian-introduction-project</module>
+    </modules>
 
     <!-- 项目的名称, Maven产生的文档用 -->
     <groupId>org.wangqian.introduction</groupId>
