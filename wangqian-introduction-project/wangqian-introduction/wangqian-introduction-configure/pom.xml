@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wangqian-introduction</artifactId>
+        <groupId>org.wangqian.introduction</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wangqian-introduction-configure</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.wangqian.introduction</groupId>
+            <artifactId>wangqian-introduction-quartz</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wangqian.introduction</groupId>
+            <artifactId>wangqian-introduction-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
+</project>

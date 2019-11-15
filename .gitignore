@@ -1,2 +1,9 @@
-/QianWalteWang.iml
 /.idea/
+target
+*#
+*.iml
+*.ipr
+*.iws
+*.jar
+*.sw?
+*.class

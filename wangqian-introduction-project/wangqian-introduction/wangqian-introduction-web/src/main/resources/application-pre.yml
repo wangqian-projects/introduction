@@ -1,0 +1,30 @@
+spring:
+  aop:
+    proxy-target-class: true
+    auto: true
+  datasource:
+    druid:
+      dbp:
+        url: jdbc:mysql://mysql-cn-north-1-dc3e1d4e518c4174.public.jcloud.com:3306/lsj_p?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+        username: lsj_beat
+        password: Lsj201805
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+      dbbase:
+        url: jdbc:mysql://mysql-cn-north-1-463059001bc340b5.public.jcloud.com:3306/lsj_base?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+        username: lsj_beat
+        password: Lsj201805
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+      dbpo:
+        url: jdbc:mysql://mysql-cn-north-1-2954533874b54c2d.public.jcloud.com:3306/lsj_po?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+        username: lsj_beat
+        password: Lsj201805
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
