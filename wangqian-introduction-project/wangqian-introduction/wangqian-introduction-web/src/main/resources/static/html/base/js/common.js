@@ -24,7 +24,7 @@ $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 
                           '     </nav> '+
                           '     <nav class="pure-menu pure-menu-horizontal menu-external"> '+
                           '         <ul class="pure-menu-list"> '+
-                          '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/QianWalteWang/src/main/webapp/html/github_pages/page/walte-wiki.html" class="pure-menu-link">wiki</a></li> '+
+                          '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/html/github_pages/page/walte-wiki.html" class="pure-menu-link">wiki</a></li> '+
                           '             <li class="pure-menu-item"><a href="https://github.com/wangqian-projects/QianWalteWang" class="pure-menu-link"><i class="fa fa-github"></i> github</a></li> '+
                           '             <li class="pure-menu-item"><a href="mailto:wangqian_live@163.com" class="pure-menu-link"><meta itemprop="email" content="wangqian_live@163.com"/>mail</a></li> '+
                           '             <li class="pure-menu-item"><a href="/html/main/page/friendly/000.html" class="pure-menu-link">author</a></li> '+
