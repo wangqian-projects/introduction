@@ -11,7 +11,7 @@
 
     <artifactId>wangqian-introduction-web</artifactId>
 
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <main.basedir>${basedir}/../../..</main.basedir>

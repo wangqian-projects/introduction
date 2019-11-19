@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wangqian Introduction">
+    <title>whats lunch.html | Wangqian Introduction</title>
+    <link rel="stylesheet"
+          href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/css/pure-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet"
+          href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/main/css/styles.css"/>
+    <link rel="stylesheet"
+          href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/main/css/three/heavenly-body.css"/>
+    <link rel="stylesheet"
+          href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/main/css/three/aviator.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div class="headerWrap"></div>
+    <div id="content">
+        <h1>A Kind Reminder</h1>
+        <p>Have a good lunch!</p>
+    </div> <!-- end content -->
+    <div class="footerWrap"></div>
+</div> <!-- end wrapper -->
+<script src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/js/jquery.min.js"></script>
+<script src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/js/three.min.js"></script>
+<script src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/js/common.js"></script>
+<script>
+    (function ($) {
+        if (Date.now() % 2 > 0) {
+            $(".headerWrap").after('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1><span id="lunch"></span></h1><h3><time class="nowTime"></time></h3></div></div>');
+            heavenlyBody();
+        } else {
+            $(".headerWrap").after('<div class="world banner" id="world"><div class="banner-content"><h1><span id="lunch"></span></h1><h3><time class="nowTime"></time></h3></div></div>');
+            aviator();
+        }
+
+        var getMonthWeek = function (a, b, c) {
+            var date = new Date(a, parseInt(b) - 1, c),
+                w = date.getDay(),
+                d = date.getDate();
+            return Math.ceil((d + 6 - w) / 7);
+        };
+
+
+        var restaurants = ["洋芋茶茶", "兰州拉面", "潼关肉夹馍", "美食城", "胡辣汤", "河粉店", "赵记腊汁肉店"];
+        toLunch(restaurants);
+
+        function toLunch(restaurant) {
+            var today = new Date();
+            var y = today.getFullYear();
+            var m = today.getMonth() + 1;
+            var d = today.getDate();
+            var WeekOfMonth = today.getHours() < 14 ? getMonthWeek(y, m, d) : getMonthWeek(y, m, d) + 10;
+            var dayOfWeek = today.getDay() - 1; //日:-1 一:0 六:5
+
+            var key = "@" + WeekOfMonth + "week" + m + "month" + y + "year";
+            var fuzzy = truncate(key.split(''), restaurant.length).split('');
+
+            var depth = fuzzy.length;
+            var precise = [];
+            var cursor = 0;
+            while (cursor < depth) {
+                var min;
+                var k = 0;
+                for (; k < depth; k++) {
+                    var v = fuzzy[k];
+                    if (v != null) {
+                        min = fuzzy[k];
+                        break;
+                    }
+                }
+                var reamer = min;
+                var tempV;
+                for (var fu_i = 0; fu_i < depth; fu_i++) {
+                    if (fu_i === k) {
+                        continue;
+                    }
+                    var temp = fuzzy[fu_i];
+                    if (temp != null && temp < min) {
+                        min = temp;
+                        tempV = fu_i;
+                    }
+                }
+                if (reamer === min) {
+                    precise[k] = cursor;
+                    fuzzy[k] = null;
+                } else {
+                    precise[tempV] = cursor;
+                    fuzzy[tempV] = null;
+                }
+                cursor++;
+            }
+
+            if (depth < 7 && dayOfWeek >= depth) {
+                dayOfWeek >>= (WeekOfMonth % (WeekOfMonth === 3 ? 2 : 3));
+            }
+
+            $("#lunch").text(restaurant[precise[Math.abs(dayOfWeek)]]);
+
+        }
+
+        /**
+         * 截断
+         */
+        function truncate(target, digits) {
+            //量级
+            var DIGITS_POWER = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000];
+            var result;
+            var offset = target[target.length - 1] & 0xf;
+            var binary = ((target[offset] & 0x7f) << 24)
+                | ((target[offset + 1] & 0xff) << 16)
+                | ((target[offset + 2] & 0xff) << 8) | (target[offset + 3] & 0xff);
+            var otp = binary % (DIGITS_POWER[digits]);
+            result = "" + otp;
+            while (result.length < digits) {
+                result = "0" + result;
+            }
+            return result;
+        }
+
+
+        $(".nowTime").text(formatDate(new Date(Date.now())));
+
+        function formatDate(now) {
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+
+            var month_head = month < 10 ? "0" : "";
+            var date_head = date < 10 ? "0" : "";
+
+            var week = "星期";
+            switch (now.getDay()) {
+                case 0:
+                    week += "日";
+                    break;
+                case 1:
+                    week += "一";
+                    break;
+                case 2:
+                    week += "二";
+                    break;
+                case 3:
+                    week += "三";
+                    break;
+                case 4:
+                    week += "四";
+                    break;
+                case 5:
+                    week += "五";
+                    break;
+                case 6:
+                    week += "六";
+                    break;
+            }
+
+            return year + "-" + month_head + month + "-" + date_head + date + "   " + week;
+        }
+
+    })(jQuery);
+
+</script>
+
+</body>
+</html>

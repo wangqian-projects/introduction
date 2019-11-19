@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="log.path" value="../../logs/freight" />
+    <property name="log.path" value="../../logs/introduction" />
 
     <!-- 彩色日志 -->
     <!-- 彩色日志依赖的渲染类 -->

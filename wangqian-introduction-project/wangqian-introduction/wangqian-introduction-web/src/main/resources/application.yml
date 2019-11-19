@@ -1,7 +1,7 @@
 server:
   port: 8088
   servlet:
-    context-path: /introduction
+    context-path: /
   tomcat:
     #tomcat的URI编码
     uri-encoding: UTF-8
@@ -17,6 +17,10 @@ spring:
     active:  @activatedProperties@
   #启动就初始化servlet
   mvc:
+    #静态资源访问路径
+    static-path-pattern: /**
+    #静态资源路径配置
+    static-locations: classpath:/static
     servlet:
       load-on-startup: 1
   datasource:
@@ -71,7 +75,7 @@ mybatis-plus:
   configuration:
     call-setters-on-nulls: true
     map-underscore-to-camel-case: true
-  type-aliases-package: com.lsj
+  type-aliases-package: com.wangqian
   global-config:
     db-config:
       insert-strategy: not_empty
