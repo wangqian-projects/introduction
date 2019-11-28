@@ -1,5 +1,5 @@
 # [Wangqian Introduction](https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/static-home.html)
-![introduction-logo](https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/imgs/qwaltewang-logo.svg)
+![introduction-logo](https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/imgs/introduction-logo.svg)
 #### 随笔
 我遵循着我的路线而向的目标勇猛迈进。我不断越过那些因循者与迟缓者，使我的前进变成他们的落后。
 
