@@ -52,7 +52,7 @@ function IntervalBackImg() {
 function RandomBackImg() {
     var imgArr = ["banner0.jpg", "banner1.jpg" ,"banner2.jpg", "banner3.jpg"];
     var index = RandomNum(0, imgArr.length);
-    $('.interval-back-img').css("background-image", "url(https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/html/main/imgs/"+imgArr[index]+")");
+    $('.interval-back-img').css("background-image", "url(https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/main/imgs/"+imgArr[index]+")");
 }
 
 function RandomNum(Min, Max) {
