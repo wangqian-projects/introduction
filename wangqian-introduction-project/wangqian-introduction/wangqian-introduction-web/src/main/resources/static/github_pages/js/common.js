@@ -8,14 +8,14 @@
  * @version 1.0
  */
 $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 pure-u-lg-4-24"> '+
-    '<div class="logo"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page-home.html"><img src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/imgs/introduction-logo.svg" class="pure-img" alt="" /></a></div> '+
+    '<div class="logo"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/static-home.html"><img src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/imgs/introduction-logo.svg" class="pure-img" alt="" /></a></div> '+
     '</div> '+
     '<input type="checkbox" id="menu-toggle-cb"> '+
     '<label id="menu-toggle" for="menu-toggle-cb" onclick><s class="bar"></s><s class="bar"></s><s class="bar"></s></label> '+
     '<div class="pure-u-1 pure-u-lg-20-24 box-relative menu-wrapper"> '+
     '     <nav class="pure-menu pure-menu-horizontal menu-local"> '+
     '         <ul class="pure-menu-list"> '+
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page-home.html" class="pure-menu-link">Home</a></li> '+
+    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/static-home.html" class="pure-menu-link">Home</a></li> '+
     '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">Articles</a></li> '+
     '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">Projects</a></li> '+
     '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">About</a></li> '+
