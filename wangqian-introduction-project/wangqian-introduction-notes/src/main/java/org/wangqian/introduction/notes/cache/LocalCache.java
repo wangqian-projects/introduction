@@ -41,7 +41,7 @@ public class LocalCache<K, V> extends Cache<K, V> {
     private final AtomicInteger cur = new AtomicInteger(0);
 
     /**
-     * 使用默认最大对象数100
+     * 使用默认最大对象数1000
      */
     public LocalCache() {
         this(DEFAULT_MAX_NUMBER);

@@ -1,7 +1,7 @@
 server:
   port: 8088
   servlet:
-    context-path: /
+    context-path: /introduction
   tomcat:
     #tomcat的URI编码
     uri-encoding: UTF-8
@@ -75,7 +75,7 @@ mybatis-plus:
   configuration:
     call-setters-on-nulls: true
     map-underscore-to-camel-case: true
-  type-aliases-package: com.wangqian
+  type-aliases-package: org.wangqian
   global-config:
     db-config:
       insert-strategy: not_empty
@@ -91,29 +91,5 @@ pagehelper:
 # 打印sql日志
 logging:
   level:
-    com.lsj: debug
+    org.wangqian: debug
 
-#系统相关
-system:
-  #是否发送短信
-  sendMes:
-    status: false
-  request:
-    encryption: false
-  response:
-    encryption: false
-  quartz:
-    status: false
-  #错误详细信息返回前端
-  error:
-    msg: true
-  #创蓝短信
-  chuanglang:
-    account: M0100127
-    pwd: uDHRcPIenpbfc3
-    url: http://smssh1.253.com/msg/send/json
-    report: true
-  #http相关
-  http:
-    url: http://www.baidu.com
-    timeout: 15000

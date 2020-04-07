@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
         result.put("requestParam",toJSONString);
         result.put("errorMsg",e);
 
-        logger.error("请求地址:{}===请求参数:{}====错误信息{}",url, toJSONString,e);
+        logger.error("请求地址:{}\n请求参数:{}\n错误信息{}",url, toJSONString,e);
 
         if (Boolean.valueOf(environmentUtil.getEnv("system.error.msg"))){
           return JsonResult.error(207,e.getMessage(),result);

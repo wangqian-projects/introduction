@@ -48,37 +48,6 @@
         </filter>
     </appender>
 
-
-    <!--<appender name="config_info" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-    <!--<file>${log.path}/config-info.log</file>-->
-    <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-    <!--&lt;!&ndash; 按天回滚 daily &ndash;&gt;-->
-    <!--<fileNamePattern>${log.path}/config-info.%d{yyyy-MM-dd}.log</fileNamePattern>-->
-    <!--&lt;!&ndash; 日志最大的历史 60天 &ndash;&gt;-->
-    <!--<maxHistory>60</maxHistory>-->
-    <!--</rollingPolicy>-->
-    <!--<encoder>-->
-    <!--<pattern>${log.pattern}</pattern>-->
-    <!--</encoder>-->
-    <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
-    <!--<level>INFO</level>-->
-    <!--<onMatch>ACCEPT</onMatch>-->
-    <!--<onMismatch>DENY</onMismatch>-->
-    <!--</filter>-->
-    <!--</appender>-->
-    <!--日志分类-->
-    <!--<logger name="com.lsj.common.config" level="info"-->
-    <!--additivity="false">-->
-    <!--<appender-ref ref="config_info"/>-->
-    <!--</logger>-->
-
-    <!-- 显示形成的sql、使用的参数、结果集 -->
-    <!--<logger name="java.sql" level="debug" />
-    <logger name="org.springframework.jdbc" level="debug" />-->
-
-
-
-
     <!--系统操作日志-->
     <root level="info">
         <appender-ref ref="console" />
