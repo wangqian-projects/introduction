@@ -297,13 +297,13 @@
                     }
                 });
             }
-            
+
             function downloadBulkUuid() {
                 console.log(uuidList);
                 var url = "/uuidBiz/downloadBulkUuid";
                 var params = {
                     bulkVersion: bulkVersion,
-                    uuidList : JSON.stringify(uuidList)
+                    uuidList: JSON.stringify(uuidList)
                 };
                 httpPost(url, params);
             }

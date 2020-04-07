@@ -1,31 +1,61 @@
 .heavenly-body {
-  background: linear-gradient(180deg, #0e7363, #235689, #2a9096, #364a7b, #4a367b, #5e3665, #2c294b, #31437a);
-  background-size: 1000% 1000%;
-  -webkit-animation: skygradient 180s ease infinite;
-  -moz-animation: skygradient 180s ease infinite;
-  -o-animation: skygradient 180s ease infinite;
-  animation: skygradient 180s ease infinite;
+    background: linear-gradient(180deg, #0e7363, #235689, #2a9096, #364a7b, #4a367b, #5e3665, #2c294b, #31437a);
+    background-size: 1000% 1000%;
+    -webkit-animation: skygradient 180s ease infinite;
+    -moz-animation: skygradient 180s ease infinite;
+    -o-animation: skygradient 180s ease infinite;
+    animation: skygradient 180s ease infinite;
 }
+
 @-webkit-keyframes skygradient {
-  0%{background-position:50% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
+
 @-moz-keyframes skygradient {
-  0%{background-position:50% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
+
 @-o-keyframes skygradient {
-  0%{background-position:50% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:50% 0%}
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
-@keyframes skygradient { 
-  0%{background-position:50% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:50% 0%}
+
+@keyframes skygradient {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
 }
-canvas { 
-  width: 100%!important; height: 100%!important;
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
 }

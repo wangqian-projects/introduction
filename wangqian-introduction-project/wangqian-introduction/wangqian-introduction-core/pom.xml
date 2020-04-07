@@ -10,13 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>wangqian-introduction-core</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.wangqian.introduction</groupId>
-            <artifactId>wangqian-introduction-tools</artifactId>
-            <version>${revision}</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>wangqian-introduction-configure</module>
+        <module>wangqian-introduction-tools</module>
+        <module>wangqian-introduction-framework</module>
+    </modules>
 
 </project>

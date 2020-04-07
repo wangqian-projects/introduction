@@ -65,7 +65,7 @@ spring:
         reset-enable: "false"
         #登录名
         login-username: admin
-         #登陆密码
+        #登陆密码
         login-password: 123456
 
 #mybatis配置

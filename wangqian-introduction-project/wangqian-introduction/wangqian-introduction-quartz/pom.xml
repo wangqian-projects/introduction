@@ -12,24 +12,24 @@
     <artifactId>wangqian-introduction-quartz</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.wangqian.introduction</groupId>
-            <artifactId>wangqian-introduction-tools</artifactId>
-            <version>${revision}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.wangqian.introduction</groupId>-->
+        <!--            <artifactId>wangqian-introduction-core</artifactId>-->
+        <!--            <version>${revision}</version>-->
+        <!--        </dependency>-->
 
         <!-- 定时任务 -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>2.2.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.mchange</groupId>
-                    <artifactId>c3p0</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.quartz-scheduler</groupId>-->
+        <!--            <artifactId>quartz</artifactId>-->
+        <!--&lt;!&ndash;            <version>2.2.1</version>&ndash;&gt;-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>com.mchange</groupId>-->
+        <!--                    <artifactId>c3p0</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
     </dependencies>
 
 </project>

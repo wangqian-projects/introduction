@@ -77,8 +77,8 @@ public class LocalCache<K, V> extends Cache<K, V> {
             int finalI = i;
             new Thread(() -> {
                 for (int j = 0; j < m; j++) {
-                    localCache.put(j+"/i" + "", "线程:" + finalI, 10);
-                    System.out.println("取: " + localCache.get(j+"/i"));
+                    localCache.put(j + "/i" + "", "线程:" + finalI, 10);
+                    System.out.println("取: " + localCache.get(j + "/i"));
                     io.addAndGet(1);
                 }
                 count.countDown();
@@ -139,7 +139,7 @@ public class LocalCache<K, V> extends Cache<K, V> {
             return null;
         }
         if (isExpired(vElement)) {
-            System.out.println("本地缓存key={"+ key +"}已经过期");
+            System.out.println("本地缓存key={" + key + "}已经过期");
             removeValue(key);
             return null;
         }

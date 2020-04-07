@@ -14,11 +14,8 @@
 
     <modules>
         <module>wangqian-introduction-web</module>
-        <module>wangqian-introduction-tools</module>
-        <module>wangqian-introduction-framework</module>
         <module>wangqian-introduction-quartz</module>
         <module>wangqian-introduction-core</module>
-        <module>wangqian-introduction-configure</module>
     </modules>
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
