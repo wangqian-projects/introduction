@@ -1,5 +1,6 @@
 package org.wangqian.introduction.configure.config.mybatisplus;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
@@ -22,7 +23,7 @@ import java.lang.reflect.Method;
  */
 @Component
 @Order(value = -100)
-//@Slf4j
+@Slf4j
 @Aspect
 public class DataSourceSwitchAspect {
 

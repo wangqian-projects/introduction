@@ -6,9 +6,19 @@ package org.wangqian.introduction.configure.enums;
  */
 public enum DBTypeEnum {
 
-    DB_P("dbp", "lsj_p"),
-    DB_BASE("dbbase", "lsj_base"),
-    DB_PO("dbpo", "lsj_po");
+    /**
+     * 数据源 1
+     */
+    DATA_SOURCE1("datasource1", "datasource1"),
+    /**
+     * 数据源 2
+     */
+    DATA_SOURCE2("datasource2", "datasource2"),
+    /**
+     * 数据源 3
+     */
+    DATA_SOURCE3("datasource3", "datasource3");
+
     private String value;
     private String title;
 
@@ -18,7 +28,7 @@ public enum DBTypeEnum {
     }
 
     public static DBTypeEnum getDefault() {
-        return DB_P;
+        return DATA_SOURCE1;
     }
 
     public String getValue() {

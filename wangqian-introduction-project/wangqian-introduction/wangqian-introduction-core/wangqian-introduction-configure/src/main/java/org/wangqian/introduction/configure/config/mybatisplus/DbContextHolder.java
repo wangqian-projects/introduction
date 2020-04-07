@@ -10,6 +10,9 @@ import org.wangqian.introduction.configure.enums.DBTypeEnum;
 @Slf4j
 public class DbContextHolder {
 
+    /**
+     * CONTEXT_HOLDER
+     */
     private static final ThreadLocal CONTEXT_HOLDER = new ThreadLocal<>();
 
     /**

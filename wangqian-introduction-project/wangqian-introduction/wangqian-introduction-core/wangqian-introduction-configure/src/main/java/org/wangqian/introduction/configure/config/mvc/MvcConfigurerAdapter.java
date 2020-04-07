@@ -58,7 +58,8 @@ public class MvcConfigurerAdapter implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         log.info("初始化拦截器");
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("/user/login", "/pages/login.html", "/static/**");
 
     }
 

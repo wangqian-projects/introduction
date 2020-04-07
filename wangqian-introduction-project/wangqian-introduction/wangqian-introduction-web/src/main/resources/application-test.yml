@@ -4,26 +4,26 @@ spring:
     auto: true
   datasource:
     druid:
-      dbp:
-        url: jdbc:mysql://:3306/?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+      datasource1:
+        url: jdbc:mysql://59.110.64.133:3306/introduction?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
         username: root
-        password: root
+        password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver
         initialSize: 5
         minIdle: 5
         maxActive: 20
-      dbbase:
-        url: jdbc:mysql://:3306/?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+      datasource2:
+        url: jdbc:mysql://59.110.64.133:3306/introduction?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
         username: root
-        password: root
+        password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver
         initialSize: 5
         minIdle: 5
         maxActive: 20
-      dbpo:
-        url: jdbc:mysql://:3306/?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
+      datasource3:
+        url: jdbc:mysql://59.110.64.133:3306/introduction?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&serverTimezone=UTC
         username: root
-        password: root
+        password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver
         initialSize: 5
         minIdle: 5

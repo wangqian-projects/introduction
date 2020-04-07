@@ -27,6 +27,6 @@ public @interface DB {
      *
      * @return the database you want to switch
      */
-    DBTypeEnum value() default DBTypeEnum.DB_P;
+    DBTypeEnum value() default DBTypeEnum.DATA_SOURCE1;
 
 }

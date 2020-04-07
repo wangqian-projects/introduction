@@ -27,6 +27,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
@@ -50,6 +51,7 @@ import java.util.Optional;
 @EnableTransactionManagement
 @Configuration
 @MapperScan({"com.wangqian.**.dao"})
+@Component
 public class MybatisPlusConfig {
 
     @Autowired
@@ -74,21 +76,21 @@ public class MybatisPlusConfig {
         return new OptimisticLockerInterceptor();
     }
 
-    @Bean(name = "dbp")
-    @ConfigurationProperties(prefix = "spring.datasource.druid.dbp")
-    public DataSource dbp() {
+    @Bean(name = "datasource1")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.datasource1")
+    public DataSource datasource1() {
         return DruidDataSourceBuilder.create().build();
     }
 
-    @Bean(name = "dbbase")
-    @ConfigurationProperties(prefix = "spring.datasource.druid.dbbase")
+    @Bean(name = "datasource2")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.datasource2")
     public DataSource dbbeat() {
         return DruidDataSourceBuilder.create().build();
     }
 
-    @Bean(name = "dbpo")
-    @ConfigurationProperties(prefix = "spring.datasource.druid.dbpo")
-    public DataSource dbpo() {
+    @Bean(name = "datasource3")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.datasource3")
+    public DataSource datasource3() {
         return DruidDataSourceBuilder.create().build();
     }
 
@@ -99,23 +101,23 @@ public class MybatisPlusConfig {
      */
     @Bean
     @Primary
-    public DataSource multipleDataSource(@Qualifier("dbp") DataSource dbp,
-                                         @Qualifier("dbbase") DataSource dbbase,
-                                         @Qualifier("dbpo") DataSource dbpo) {
+    public DataSource multipleDataSource(@Qualifier("datasource1") DataSource datasource1,
+                                         @Qualifier("datasource2") DataSource datasource2,
+                                         @Qualifier("datasource3") DataSource datasource3) {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         Map<Object, Object> targetDataSources = new HashMap<>();
-        targetDataSources.put(DBTypeEnum.DB_P.getValue(), dbp);
-        targetDataSources.put(DBTypeEnum.DB_BASE.getValue(), dbbase);
-        targetDataSources.put(DBTypeEnum.DB_PO.getValue(), dbpo);
+        targetDataSources.put(DBTypeEnum.DATA_SOURCE1.getValue(), datasource1);
+        targetDataSources.put(DBTypeEnum.DATA_SOURCE2.getValue(), datasource2);
+        targetDataSources.put(DBTypeEnum.DATA_SOURCE3.getValue(), datasource3);
         dynamicDataSource.setTargetDataSources(targetDataSources);
-        dynamicDataSource.setDefaultTargetDataSource(dbp);
+        dynamicDataSource.setDefaultTargetDataSource(datasource1);
         return dynamicDataSource;
     }
 
     @Bean("sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactoryBean = new MybatisSqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(multipleDataSource(dbp(), dbbeat(), dbpo()));
+        sqlSessionFactoryBean.setDataSource(multipleDataSource(datasource1(), dbbeat(), datasource3()));
         setMybatisPlusFactory(sqlSessionFactoryBean);
         return sqlSessionFactoryBean.getObject();
     }
