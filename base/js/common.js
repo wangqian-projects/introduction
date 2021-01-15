@@ -8,9 +8,9 @@
  * @version 1.0
  */
 $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 pure-u-lg-4-24"> ' +
-    '<div class="logo"><a href="/introduction"><img src="/introduction/base/imgs/introduction-logo.svg" class="pure-img" alt="" /></a>' +
+    '<div class="logo"><a href="/introduction"><img src="/introduction/base/imgs/logo.svg" class="pure-img" alt="" /></a>' +
     '</div> ' +
-    '<input type="checkbox" id="menu-toggle-cb"> ' +
+    '</div> <input type="checkbox" id="menu-toggle-cb"> ' +
     '<label id="menu-toggle" for="menu-toggle-cb" onclick><s class="bar"></s><s class="bar"></s><s class="bar"></s></label> ' +
     '<div class="pure-u-1 pure-u-lg-20-24 box-relative menu-wrapper"> ' +
     '     <nav class="pure-menu pure-menu-horizontal menu-local"> ' +
