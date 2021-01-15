@@ -8,33 +8,33 @@
  * @version 1.0
  */
 $('.headerWrap').html('<header class="pure-g" id="header"> <div class="pure-u-1 pure-u-lg-4-24"> ' +
-    '<div class="logo"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/static-home.html"><img src="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/base/imgs/introduction-logo.svg" class="pure-img" alt="" /></a></div> ' +
+    '<div class="logo"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/static-home.html"><img src="https://wangqian_projects.gitee.io/introduction/base/imgs/introduction-logo.svg" class="pure-img" alt="" /></a></div> ' +
     '</div> ' +
     '<input type="checkbox" id="menu-toggle-cb"> ' +
     '<label id="menu-toggle" for="menu-toggle-cb" onclick><s class="bar"></s><s class="bar"></s><s class="bar"></s></label> ' +
     '<div class="pure-u-1 pure-u-lg-20-24 box-relative menu-wrapper"> ' +
     '     <nav class="pure-menu pure-menu-horizontal menu-local"> ' +
     '         <ul class="pure-menu-list"> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/static-home.html" class="pure-menu-link">Home</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">Articles</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">Projects</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">About</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">Sponsor</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/static-home.html" class="pure-menu-link">Home</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link">Articles</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link">Projects</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link">About</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link">Sponsor</a></li> ' +
     '         </ul> ' +
     '     </nav> ' +
     '     <nav class="pure-menu pure-menu-horizontal menu-external"> ' +
     '         <ul class="pure-menu-list"> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/walte-wiki.html" class="pure-menu-link">wiki</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/walte-wiki.html" class="pure-menu-link">wiki</a></li> ' +
     '             <li class="pure-menu-item"><a href="https://github.com/wangqian-projects/wangqian-introduction" class="pure-menu-link"><i class="fa fa-github"></i> github</a></li> ' +
     '             <li class="pure-menu-item"><a href="mailto:wangqian_live@163.com" class="pure-menu-link"><meta itemprop="email" content="wangqian_live@163.com"/>mail</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link">author</a></li> ' +
-    '             <li class="pure-menu-item"><a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/friendly-404.html" class="pure-menu-link"><i class="fa fa-user-circle"></i> sign in</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link">author</a></li> ' +
+    '             <li class="pure-menu-item"><a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/friendly-404.html" class="pure-menu-link"><i class="fa fa-user-circle"></i> sign in</a></li> ' +
     '         </ul> ' +
     '     </nav> ' +
     ' </div> ' +
     ' </header>');
 
-$('.footerWrap').html('<footer>© Copyright 2018 Wangqian Introduction all rights reserved | <a href="https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/github_pages/page/privacy-policy.html">Privacy Policy</a></footer>');
+$('.footerWrap').html('<footer>© Copyright 2018 Wangqian Introduction all rights reserved | <a href="https://wangqian_projects.gitee.io/introduction/github_pages/page/privacy-policy.html">Privacy Policy</a></footer>');
 
 //使元素为class="href-Invalid"的href失效
 $(".href-invalid").click(function () {
@@ -52,7 +52,7 @@ function IntervalBackImg() {
 function RandomBackImg() {
     var imgArr = ["banner0.jpg", "banner1.jpg", "banner2.jpg", "banner3.jpg"];
     var index = RandomNum(0, imgArr.length);
-    $('.interval-back-img').css("background-image", "url(https://wangqian-projects.github.io/wangqian-introduction/wangqian-introduction-project/wangqian-introduction/wangqian-introduction-web/src/main/resources/static/main/imgs/" + imgArr[index] + ")");
+    $('.interval-back-img').css("background-image", "url(https://wangqian_projects.gitee.io/introduction/main/imgs/" + imgArr[index] + ")");
 }
 
 function RandomNum(Min, Max) {
