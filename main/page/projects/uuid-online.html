@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wangqian Introduction">
+    <title>UUID Online | Wangqian Introduction</title>
+
+    <link rel="stylesheet" href="/base/css/pure-min.css"/>
+    <link rel="stylesheet" href="/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet" href="/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/main/css/styles.css"/>
+    <style>
+        .index a.share-uuid {
+            color: black;
+        }
+
+        .view {
+            margin-top: 50px;
+            display: none;
+        }
+
+        .view-uuid {
+            margin-top: 25px;
+            width: 490px;
+        }
+
+        .view-uuid-ul {
+            width: 490px;
+        }
+
+        .view-uuid ul {
+            text-align: center;
+        }
+
+        .view-uuid li {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="headerWrap"></div>
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Online UUID Generator</h1>
+            <h3><span id="version"></span></h3>
+            <h2><span id="uuid"></span></h2>
+            <h3>Refresh to generate another.</h3>
+        </div>
+    </div>
+    <div id="content" class="index">
+        <div align="center">
+            <a class="pure-button" id="refreshUuid" href="#wrapper">Refresh</a>
+        </div>
+        <div class="pure-g">
+
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="l-box">
+                    <h2>
+                        <a href="#wrapper" class="share-uuid gen-version1">
+                            <i class="fa fa-share"></i>
+                        </a>
+                        Version 1 UUID
+                    </h2>
+                    <a class="gen-version1" href="#wrapper" id="version1">Generate a version 1 UUID.</a>
+                    <h2>Bulk Version 1 UUID Generation</h2>
+                    <ul class="public-list">
+                        <li>
+                            <span class="placeholder-margin-right-26">How Many ?</span>
+                            <input class="input-many" placeholder="1-10000" id="version1_many" type="text"/>
+                        </li>
+                        <li>
+                            <input id="hyphen1" type="checkbox" name="checkbox">
+                            <label class="placeholder-margin-right-10" for="hyphen1">No Hyphen</label>
+                            <a class="pure-button href-invalid" id="bulk_version1" href="#bulk_version1">Generate</a>
+                        </li>
+                    </ul>
+                    <a class="href-invalid" href=""><h2>What is a Version 1 UUID?</h2></a>
+                </div>
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="l-box">
+                    <h2>
+                        <a href="#wrapper" class="share-uuid gen-version4">
+                            <i class="fa fa-share"></i>
+                        </a>
+                        Version 4 UUID
+                    </h2>
+                    <a class="gen-version4" href="#wrapper" id="version4">Generate a version 4 UUID.</a>
+                    <h2>Bulk Version 4 UUID Generation</h2>
+                    <ul class="public-list">
+                        <li>
+                            <span class="placeholder-margin-right-26">How Many ?</span>
+                            <input class="input-many" placeholder="1-10000" id="version4_many" type="text"/>
+                        </li>
+                        <li>
+                            <input id="hyphen4" type="checkbox" name="checkbox" value="noHyphen">
+                            <label class="placeholder-margin-right-10" for="hyphen4">No Hyphen</label>
+                            <a class="pure-button href-invalid" id="bulk_version4" href="#bulk_version4">Generate</a>
+                        </li>
+                    </ul>
+                    <a class="href-invalid" href=""><h2>What is a Version 4 UUID?</h2></a>
+                </div>
+            </div>
+
+            <div id="view" class="pure-u-1 view" align="center">
+                <div>
+                    <span class="placeholder-margin-right-26">
+                         <a class="pure-button href-invalid" id="copy" href="#copy">Copy</a>
+                    </span>
+                    <span class="placeholder-margin-left-26">
+                        <a class="pure-button href-invalid" id="downloadBulkUuid" href="#downloadBulkUuid">Download</a>
+                    </span>
+                </div>
+                <div class="view-uuid">
+                    <ul id="uuid_ul" class="public-list view-uuid-ul"></ul>
+                </div>
+            </div>
+        </div> <!-- end pure-g -->
+
+    </div> <!-- end content -->
+    <div class="footerWrap"></div>
+</div> <!-- end wrapper -->
+<script src="/base/js/jquery.min.js"></script>
+<script src="/base/js/common.js"></script>
+<script src="/base/js/intervalBackImg.js"></script>
+
+<script>
+    (function ($) {
+        $(function () {
+            Initialization();
+
+            //global variables
+            var version; //全局版本号
+            var bulkVersion;
+            var uuidList;
+
+            //-------------------------- functions -----------------------------
+            //init
+            function Initialization() {
+                doUuid();
+                eventBinding();
+            }
+
+            //event
+            function eventBinding() {
+                //generate a uuid
+                $(".gen-version1").click(function () {
+                    version = 1;
+                    doUuid();
+                });
+
+                $(".gen-version4").click(function () {
+                    version = 4;
+                    doUuid();
+                });
+
+                $("#refreshUuid").click(function () {
+                    doUuid();
+                });
+
+                // bulk uuid generation
+                $("#bulk_version1").click(function () {
+                    bulkVersion = 1;
+                    doBulkUuid(true);
+                });
+
+                $("#bulk_version4").click(function () {
+                    bulkVersion = 4;
+                    doBulkUuid(false);
+                });
+
+                $(".input-many").click(function () {
+                    $(".input-many").val("").css("color", "#2c3134");
+                });
+
+                $("#copy").click(function () {
+                    var copy = document.getElementById("uuid_ul");
+                    if (document.body.createTextRange) {
+                        var range = document.body.createTextRange();
+                        range.moveToElementText(copy);
+                        range.select();
+                    } else if (window.getSelection) {
+                        var selection = window.getSelection();
+                        var range = document.createRange();
+                        range.selectNodeContents(copy);
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                    } else {
+                        alert("请手动复制");
+                    }
+                    document.execCommand("Copy");
+                });
+
+                $("#downloadBulkUuid").click(function () {
+                    downloadBulkUuid();
+                });
+            }
+
+            function doUuid() {
+                if (!version) {
+                    version = 4;
+                }
+                chooseVersion();
+                generateUuid();
+            }
+
+            function doBulkUuid(ver) {
+                var howmany;
+                var hyphen;
+                if (ver) {
+                    var many1 = $("#version1_many");
+                    howmany = many1.val();
+                    if (!checkHowMany(many1)) {
+                        return false;
+                    }
+                    hyphen = document.getElementById("hyphen1").checked ? 1 : 0;
+                } else {
+                    var many4 = $("#version4_many");
+                    howmany = many4.val();
+                    if (!checkHowMany(many4)) {
+                        return false;
+                    }
+                    hyphen = document.getElementById("hyphen4").checked ? 1 : 0;
+                }
+                generateBulkUuid(ver ? 1 : 4, howmany, hyphen);
+                ViewOnOff(true);
+            }
+
+            function chooseVersion() {
+                $("#version").text("Your Version " + version + " UUID:");
+            }
+
+            function generateUuid() {
+                $.ajax({
+                    url: '/uuidBiz/generateUuid',
+                    type: 'POST', //GET
+                    async: true,    //或false,是否异步
+                    data: {
+                        version: version
+                    },
+                    timeout: 5000,    //超时时间
+                    dataType: 'text',    //返回的数据格式：json/xml/html/script/jsonp/text
+                    success: function (data) {
+                        $("#uuid").text(data);
+                    }
+                });
+
+            }
+
+            function checkHowMany(howMany) {
+                if (!checkString2Num(howMany.val())) {
+                    howMany.css("color", "red");
+                    ViewOnOff(false);
+                    return false;
+                }
+                return true;
+            }
+
+            function checkString2Num(numStr) {
+                var pattern = /^[-]?\d+$/;
+                if (!pattern.test(numStr)) {
+                    return false;
+                }
+                var num = parseInt(numStr);
+                //当参数many不是数值类型,不是整数, 不在区间[1,3000]内, 返回false
+                return !(!num || !(typeof num === 'number') || !(num % 1 === 0) || num < 1 || num > 10000);
+            }
+
+            function ViewOnOff(finger) {
+                if (finger) {
+                    $("#view").show();
+                } else {
+                    $("#view").hide()
+                }
+            }
+
+            function generateBulkUuid(version_, howmany, hyphen) {
+                $.ajax({
+                    url: '/uuidBiz/generateBulkUuid',
+                    type: 'POST', //GET
+                    async: true,    //或false,是否异步
+                    data: {
+                        version: version_, howmany: howmany, hyphen: hyphen
+                    },
+                    timeout: 5000,    //超时时间
+                    dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                    success: function (data) {
+                        var uuid_ul = $("#uuid_ul");
+                        uuid_ul.children().filter("li").remove();
+                        for (var i = 0; i < data.length; i++) {
+                            uuid_ul.append("<li>" + data[i] + "</li>");
+                        }
+                        uuidList = data;
+                    }
+                });
+            }
+
+            function downloadBulkUuid() {
+                console.log(uuidList);
+                var url = "/uuidBiz/downloadBulkUuid";
+                var params = {
+                    bulkVersion: bulkVersion,
+                    uuidList: JSON.stringify(uuidList)
+                };
+                httpPost(url, params);
+            }
+
+
+        });
+    })(jQuery);
+
+</script>
+</body>
+</html>

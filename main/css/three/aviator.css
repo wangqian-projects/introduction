@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'codropsicons';
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*a:hover,*/
+/*a:focus {*/
+/*color: #1dbba3;*/
+/*outline: none;*/
+/*}*/
+
+
+/* Top Navigation Style */
+
+.meta {
+    font-size: 0.75em;
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    border-top: 1px;
+}
+
+.meta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.meta a {
+    display: block;
+    padding: 1em 1.35em;
+    border: 1px;
+    border-top: 0;
+}
+
+.meta a:not(:last-child) {
+    border-right: 0;
+}
+
+@media screen and (max-width: 40em) {
+    .meta {
+        right: 1em;
+    }
+
+    .demo-link {
+        -webkit-flex: 1;
+        flex: 1;
+    }
+}
+
+.world {
+    overflow: hidden;
+    background: -webkit-linear-gradient(#e46e60, #51c9f7);
+    background: linear-gradient(#e46d69, #678df7);
+}
+

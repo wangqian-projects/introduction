@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wangqian Introduction">
+    <meta name="keywords" content=""/>
+    <title>video | Wangqian Introduction</title>
+
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+    <link rel="stylesheet" href="/base/css/pure-min.css"/>
+    <link rel="stylesheet" href="/base/css/grids-responsive-min.css"/>
+    <link rel="stylesheet" href="/base/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/main/css/styles.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div class="headerWrap"></div>
+    <div class="banner">
+        <div class="banner-content">
+            <h1>video page.</h1>
+            <div>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                        src="//music.163.com/outchain/player?type=3&id=793770439&auto=0&height=66">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div>
+            <video id="my-video" class="video-js" controls preload="auto" width="1000" height="536"
+                   poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
+
+                <source src="http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"
+                        type="application/x-mpegURL">
+                <!-- 加载rtmp视频-->
+                <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv"/>
+
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+
+    </div> <!-- end content -->
+    <div class="footerWrap"></div>
+</div> <!-- end wrapper -->
+<script src="/base/js/jquery.min.js"></script>
+<script src="/base/js/common.js"></script>
+<script src="/base/js/intervalBackImg.js"></script>
+<script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+<script>
+
+</script>
+</body>
+</html>
