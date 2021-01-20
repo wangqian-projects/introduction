@@ -3,36 +3,43 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Introduction">
-    <title>404 | Aster</title>
+    <meta name="description" content="Wangqian Introduction">
+    <title>404 | Wangqian Introduction</title>
 
     <link rel="stylesheet" href="/introduction/base/css/pure-min.css"/>
     <link rel="stylesheet" href="/introduction/base/css/grids-responsive-min.css"/>
     <link rel="stylesheet" href="/introduction/base/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/introduction/main/css/styles.css"/>
+    <link rel="stylesheet" href="/introduction/main/css/three/aviator.css"/>
     <link rel="stylesheet" href="/introduction/main/css/three/heavenly-body.css"/>
 </head>
 <body>
 <div id="wrapper">
     <div class="headerWrap"></div>
-    <div class="heavenly-body banner" id="universe">
-        <div class="banner-content">
-            <h1>404</h1>
-            <h3>PAGE NOT FOUND</h3>
-        </div>
-    </div>
     <div id="content">
         <h1>A Kind Reminder</h1>
-        <p>The requested URL /404/ was not found on this server.</p>
-        <p>Check the requested URL is correct or return to home.</p>
-        <a class="pure-button read-more" href="/introduction">Return to Home</a>
+        <p>There haven't a static page.</p>
+        <p>I have a great vision that one day this page will actually be finished and complete. Please share in this
+            delusion.</p>
+        <a class="pure-button read-more"
+           href="/introduction">Return
+            to Home</a>
     </div> <!-- end content -->
     <div class="footerWrap"></div>
 </div> <!-- end wrapper -->
 <script src="/introduction/base/js/jquery.min.js"></script>
-<script src="/introduction/base/js/common.js"></script>
 <script src="/introduction/base/js/three.min.js"></script>
-<script src="/introduction/main/js/three/aviator.js"></script>
-<script src="/introduction/main/js/three/heavenly-body.js"></script>
+<script src="/introduction/base/js/common.js"></script>
+<script>
+    (function ($) {
+        if (Date.now() % 2 > 0) {
+            $(".headerWrap").after('<div class="heavenly-body banner" id="universe"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+            heavenlyBody();
+        } else {
+            $(".headerWrap").after('<div class="world banner" id="world"><div class="banner-content"><h1>404</h1><h3>PAGE NOT FOUND</h3></div></div>');
+            aviator();
+        }
+    })(jQuery);
+</script>
 </body>
 </html>
